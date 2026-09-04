@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://iurqut1p47dg" path="res://player/CharacterBody2D.gd" id="1_a3uy3"]
 [ext_resource type="Texture2D" uid="uid://bcmj8wtoine8v" path="res://player/idle.png" id="2_d0owe"]
+[ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player/state_machine.gd" id="3_d0owe"]
+[ext_resource type="Script" uid="uid://cutsty7vioks7" path="res://player/idle.gd" id="4_3nrky"]
+[ext_resource type="Script" uid="uid://cqbbvk1yo45a8" path="res://player/run.gd" id="5_fpdhf"]
+[ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player/jump.gd" id="5_k12ae"]
+[ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player/fall.gd" id="7_0vw6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 
@@ -17,5 +22,21 @@ shape = SubResource("RectangleShape2D_yf5fn")
 position = Vector2(7.6293945e-06, 3.8146973e-06)
 scale = Vector2(4.09375, 3.9687502)
 texture = ExtResource("2_d0owe")
+
+[node name="StateMachine" type="Node" parent="CharacterBody2D" unique_id=322809304 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_d0owe")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1421364055]
+script = ExtResource("4_3nrky")
+
+[node name="Run" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1679683738]
+script = ExtResource("5_fpdhf")
+
+[node name="Jump" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1780631937]
+script = ExtResource("5_k12ae")
+
+[node name="Fall" type="Node" parent="CharacterBody2D/StateMachine" unique_id=2055998501]
+script = ExtResource("7_0vw6r")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]

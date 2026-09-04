@@ -14,10 +14,10 @@ func _process(delta: float) -> void:
 	pass
 	
 
-func _physics_process(delta):
-		var direction=Input.get_vector("left","right","up","down")
-		velocity.x=direction.x*speed
-		velocity.y += gravity* delta
-		print("Current Velocity: ", velocity)
-		move_and_slide()
+#func _physics_process(delta):
+		#var direction=Input.get_vector("left","right","up","down")
+		#velocity.x=direction.x*speed
+		#velocity.y += gravity* delta
+		#print("Current Velocity: ", velocity)
+		#move_and_slide()
 		
