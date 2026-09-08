@@ -1,5 +1,8 @@
 extends State
 
+func enter():
+	animator.play("idle")
+	
 func physics_update(delta):
 	# 1. Handle Physics (Friction and Gravity)
 	if not player.is_on_floor():

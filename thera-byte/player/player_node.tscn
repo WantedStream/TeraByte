@@ -1,14 +1,161 @@
 [gd_scene format=3 uid="uid://41rugr6lt41b"]
 
 [ext_resource type="Script" uid="uid://iurqut1p47dg" path="res://player/CharacterBody2D.gd" id="1_a3uy3"]
-[ext_resource type="Texture2D" uid="uid://bcmj8wtoine8v" path="res://player/idle.png" id="2_d0owe"]
+[ext_resource type="Texture2D" uid="uid://ddsfvvbtqvaht" path="res://player/states/idle/idle_animation.png" id="2_0vw6r"]
 [ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player/state_machine.gd" id="3_d0owe"]
-[ext_resource type="Script" uid="uid://cutsty7vioks7" path="res://player/idle.gd" id="4_3nrky"]
-[ext_resource type="Script" uid="uid://cqbbvk1yo45a8" path="res://player/run.gd" id="5_fpdhf"]
-[ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player/jump.gd" id="5_k12ae"]
-[ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player/fall.gd" id="7_0vw6r"]
+[ext_resource type="Script" uid="uid://cutsty7vioks7" path="res://player/states/idle/idle.gd" id="4_3nrky"]
+[ext_resource type="Script" uid="uid://cqbbvk1yo45a8" path="res://player/states/run/run.gd" id="5_fpdhf"]
+[ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player/states/jump/jump.gd" id="5_k12ae"]
+[ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player/states/fall/fall.gd" id="7_0vw6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+
+[sub_resource type="Animation" id="Animation_a3l2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:load_path")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/jump_animation.png-8ee0c6d5f528d5a586f2dd0883cdacee.ctex"]
+}
+
+[sub_resource type="Animation" id="Animation_2co6o"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/fall_animation.png-98e8c7b44a0a565db0380f20dc7958e4.ctex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_nt02f"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/idle_animation.png-b51287db3c7072e29ae809eed44f5b48.ctex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rppns"]
+resource_name = "jump"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:load_path")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/jump_animation.png-8ee0c6d5f528d5a586f2dd0883cdacee.ctex"]
+}
+
+[sub_resource type="Animation" id="Animation_0vw6r"]
+resource_name = "run"
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture:load_path")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/walking animation.png-e9396f6bf51da260a73d75eea0b357d7.ctex"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3l2y"]
+_data = {
+&"RESET": SubResource("Animation_a3l2y"),
+&"fall": SubResource("Animation_2co6o"),
+&"idle": SubResource("Animation_nt02f"),
+&"jump": SubResource("Animation_rppns"),
+&"run": SubResource("Animation_0vw6r")
+}
 
 [node name="CharacterNode" type="Node2D" unique_id=1144248442]
 
@@ -20,8 +167,9 @@ shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=951811005]
 position = Vector2(7.6293945e-06, 3.8146973e-06)
-scale = Vector2(4.09375, 3.9687502)
-texture = ExtResource("2_d0owe")
+scale = Vector2(4, 4)
+texture = ExtResource("2_0vw6r")
+vframes = 2
 
 [node name="StateMachine" type="Node" parent="CharacterBody2D" unique_id=322809304 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_d0owe")
@@ -38,5 +186,8 @@ script = ExtResource("5_k12ae")
 
 [node name="Fall" type="Node" parent="CharacterBody2D/StateMachine" unique_id=2055998501]
 script = ExtResource("7_0vw6r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=1281104631]
+libraries/ = SubResource("AnimationLibrary_a3l2y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]

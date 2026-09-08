@@ -6,13 +6,13 @@ var states: Dictionary = {}
 
 func _ready():
 	var player = get_parent() # Grabs the CharacterBody2D
-	
+	var anim_player = player.get_node("AnimationPlayer")
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.player = player
 			child.transition.connect(on_child_transition)
-	
+			child.animator = anim_player
 	if initial_state:
 		initial_state.enter()
 		current_state = initial_state

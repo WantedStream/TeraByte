@@ -1,5 +1,6 @@
 extends State
-
+func enter():
+	animator.play("fall")
 func physics_update(delta):
 	# 1. Apply continuous gravity
 	player.velocity.y += player.gravity * delta

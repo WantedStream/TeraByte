@@ -1,5 +1,7 @@
 extends State
-
+func enter():
+	animator.play("run")
+	
 func physics_update(delta):
 	# 1. Apply gravity (just in case we step off a ledge this frame)
 	if not player.is_on_floor():

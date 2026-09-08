@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	animator.play("jump")
 	player.velocity.y = -400.0 # Set your jump velocity here
 
 func physics_update(delta):

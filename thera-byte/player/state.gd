@@ -3,7 +3,7 @@ class_name State
 
 signal transition(state, new_state_name)
 var player: CharacterBody2D
-
+var animator: AnimationPlayer
 func enter():
 	pass
 func exit():
