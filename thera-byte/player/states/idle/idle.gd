@@ -2,6 +2,7 @@ extends State
 
 func enter():
 	animator.play("idle")
+#	EventBus.test_signal_fired.emit("Hello from the Idle state!")
 	
 func physics_update(delta):
 	# 1. Handle Physics (Friction and Gravity)
@@ -17,4 +18,3 @@ func physics_update(delta):
 		transition.emit(self, "jump")
 	elif Input.get_vector("left", "right", "up", "down").x != 0:
 		transition.emit(self, "run")
-	print("idle")

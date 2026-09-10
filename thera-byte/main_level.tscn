@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://o0sru36lcs4x"]
 
 [ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player/player_node.tscn" id="1_6614m"]
+[ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://main_level.gd" id="1_bhu08"]
+[ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="2_05as6"]
 [ext_resource type="PackedScene" uid="uid://bxum874715rd" path="res://floor.tscn" id="2_bhu08"]
 
 [node name="MainLevel" type="Node2D" unique_id=1682213557]
+script = ExtResource("1_bhu08")
+
+[node name="Coin" parent="." unique_id=422494176 instance=ExtResource("2_05as6")]
+position = Vector2(100, 62)
 
 [node name="CharacterNode" parent="." unique_id=1144248442 instance=ExtResource("1_6614m")]
 
