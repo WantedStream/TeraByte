@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cmcn1sm7v5lmy"]
+
+[ext_resource type="Script" uid="uid://cdws0iapvqitl" path="res://hazard/hazard.gd" id="1_2jias"]
+[ext_resource type="Texture2D" uid="uid://3mp2lbqniyhl" path="res://hazard/fire_animation.png" id="2_8y0jl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mnpp"]
+
+[sub_resource type="Animation" id="Animation_3aorw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_8y0jl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_3wq7b"]
+resource_name = "fire_animation"
+length = 0.46666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_8y0jl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aa7y0"]
+_data = {
+&"RESET": SubResource("Animation_3aorw"),
+&"fire_animation": SubResource("Animation_3wq7b")
+}
+
+[node name="Hazard" type="Area2D" unique_id=1702430680]
+script = ExtResource("1_2jias")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1035717538]
+texture = ExtResource("2_8y0jl")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2011815981]
+shape = SubResource("CircleShape2D_4mnpp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=704651964]
+libraries/ = SubResource("AnimationLibrary_aa7y0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

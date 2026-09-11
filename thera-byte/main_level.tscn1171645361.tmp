@@ -10,7 +10,7 @@
 script = ExtResource("1_bhu08")
 
 [node name="Hazard" parent="." unique_id=1702430680 instance=ExtResource("2_5ymk8")]
-position = Vector2(3, 27)
+position = Vector2(2, 53)
 scale = Vector2(2, 2)
 
 [node name="Coin" parent="." unique_id=422494176 instance=ExtResource("2_05as6")]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var gravity: float = 300.0
-
+@export var health = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("The script is attached and alive!")
