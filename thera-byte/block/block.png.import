@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs218aw63iv3q"
-path="res://.godot/imported/taiga_.png-4627fc9e78af01ea607de1d400e72a23.ctex"
+uid="uid://br553j0bi5ns4"
+path="res://.godot/imported/block.png-93604b2b36f4b13eaddd8db94d7f9f6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fantasy_ [version 2.0]/taiga_/taiga_.png"
-dest_files=["res://.godot/imported/taiga_.png-4627fc9e78af01ea607de1d400e72a23.ctex"]
+source_file="res://block/block.png"
+dest_files=["res://.godot/imported/block.png-93604b2b36f4b13eaddd8db94d7f9f6a.ctex"]
 
 [params]
 

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://o0sru36lcs4x"]
+
+[ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://main files/main_level.gd" id="1_rv3d8"]
+[ext_resource type="PackedScene" uid="uid://cmcn1sm7v5lmy" path="res://hazard/hazard.tscn" id="2_ch5ey"]
+[ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="3_jsk0t"]
+[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player/player_node.tscn" id="4_v15p8"]
+[ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="5_rv3d8"]
+
+[node name="MainLevel" type="Node2D" unique_id=1682213557]
+script = ExtResource("1_rv3d8")
+
+[node name="CharacterBody2D" parent="." unique_id=1185049311 instance=ExtResource("4_v15p8")]
+position = Vector2(-162, 42)
+
+[node name="Hazard" parent="." unique_id=1702430680 instance=ExtResource("2_ch5ey")]
+position = Vector2(3, 27)
+scale = Vector2(2, 2)
+
+[node name="Coin" parent="." unique_id=422494176 instance=ExtResource("3_jsk0t")]
+position = Vector2(100, 62)
+
+[node name="TileMapLayer" parent="." unique_id=1882126655 instance=ExtResource("5_rv3d8")]

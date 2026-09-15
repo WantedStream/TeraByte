@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player/states/jump/jump.gd" id="5_k12ae"]
 [ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player/states/fall/fall.gd" id="7_0vw6r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ch5ey"]
 
 [sub_resource type="Animation" id="Animation_a3l2y"]
 length = 0.001
@@ -157,37 +157,35 @@ _data = {
 &"run": SubResource("Animation_0vw6r")
 }
 
-[node name="CharacterNode" type="Node2D" unique_id=1144248442]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1185049311]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1185049311]
 script = ExtResource("1_a3uy3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=237916990]
-shape = SubResource("RectangleShape2D_yf5fn")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=951811005]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237916990]
+shape = SubResource("CircleShape2D_ch5ey")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951811005]
 position = Vector2(7.6293945e-06, 3.8146973e-06)
 scale = Vector2(4, 4)
 texture = ExtResource("2_0vw6r")
 vframes = 2
 
-[node name="StateMachine" type="Node" parent="CharacterBody2D" unique_id=322809304 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=322809304 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_d0owe")
 initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1421364055]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1421364055]
 script = ExtResource("4_3nrky")
 
-[node name="Run" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1679683738]
+[node name="Run" type="Node" parent="StateMachine" unique_id=1679683738]
 script = ExtResource("5_fpdhf")
 
-[node name="Jump" type="Node" parent="CharacterBody2D/StateMachine" unique_id=1780631937]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=1780631937]
 script = ExtResource("5_k12ae")
 
-[node name="Fall" type="Node" parent="CharacterBody2D/StateMachine" unique_id=2055998501]
+[node name="Fall" type="Node" parent="StateMachine" unique_id=2055998501]
 script = ExtResource("7_0vw6r")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=1281104631]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1281104631]
 libraries/ = SubResource("AnimationLibrary_a3l2y")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]
