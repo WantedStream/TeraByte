@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch4vnsqjhavrr"]
+
+[ext_resource type="Script" uid="uid://d3w1vc45kj70e" path="res://hud/hud.gd" id="1_6ca3a"]
+
+[node name="HUD" type="CanvasLayer" unique_id=64284090]
+script = ExtResource("1_6ca3a")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=474099700]
+anchors_preset = -1
+anchor_right = 0.07300001
+anchor_bottom = 0.060000002
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -13.096008
+offset_bottom = -10.880001
+text = "Score: 0"

@@ -6,8 +6,10 @@ func _ready() -> void:
 	EventBus.test_signal_fired.connect(on_test_signal)
 	EventBus.coin_collected.connect(on_coin_collected)
 	EventBus.player_damaged.connect(on_player_damaged)
+	EventBus.finish_level.connect(on_door_collide)
 	pass # Replace with function body.
-
+func on_door_collide(stats):
+	print('level complete')
 func on_test_signal(message):
 	print("THE MAIN LEVEL HEARD: ", message)
 	

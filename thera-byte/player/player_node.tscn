@@ -163,6 +163,7 @@ script = ExtResource("1_a3uy3")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237916990]
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_ch5ey")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951811005]

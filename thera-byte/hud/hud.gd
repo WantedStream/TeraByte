@@ -1,17 +1,17 @@
-extends Area2D
-@export var damage_amount: int = 1
+extends CanvasLayer
+
+@onready var score_label = $ScoreLabel
+var total_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	EventBus.coin_collected.connect(_on_coin_collected)
+	
 	pass # Replace with function body.
 
-
+func _on_coin_collected(value: int):
+	total_score += value
+	score_label.text = "Score: " + str(total_score)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "CharacterBody2D":
-		EventBus.player_damaged.emit(damage_amount)
-	pass # Replace with function body.

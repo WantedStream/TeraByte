@@ -1,5 +1,6 @@
 extends Area2D
-@export var damage_amount: int = 1
+
+@export var level_id: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,10 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
-		EventBus.player_damaged.emit(damage_amount)
+		EventBus.finish_level.emit(level_id)
 	pass # Replace with function body.

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var speed: float = 300.0
+@export var speed: float = 400.0
 @export var gravity: float = 300.0
 
-@export var max_health: int = 100
+@export var max_health: int = 3
 var current_health: int
 
 # Called when the node enters the scene tree for the first time.
@@ -14,11 +14,13 @@ func _ready() -> void:
 	
 	# 2. Wire the interrupt to the Event Bus
 	EventBus.player_damaged.connect(take_damage)
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	pass
 	
 func take_damage(amount: int):
@@ -32,10 +34,11 @@ func take_damage(amount: int):
 	if current_health <= 0:
 		current_health = 0 # Prevent negative numbers
 		die()
-
+func level_complete():
+	print("level_completed")
 func die():
 	print("THE PLAYER HAS REACHED 0 HEALTH!")
-	
+	get_tree().reload_current_scene()
 	# We will build the actual death logic (like switching to a Death state) later.
 #func _physics_process(delta):
 		#var direction=Input.get_vector("left","right","up","down")
