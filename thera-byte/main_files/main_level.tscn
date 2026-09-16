@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://o0sru36lcs4x"]
 
-[ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://main files/main_level.gd" id="1_rv3d8"]
+[ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://main_files/main_level.gd" id="1_rv3d8"]
 [ext_resource type="PackedScene" uid="uid://cmcn1sm7v5lmy" path="res://hazard/hazard.tscn" id="2_ch5ey"]
 [ext_resource type="PackedScene" uid="uid://ch4vnsqjhavrr" path="res://hud/hud.tscn" id="2_jsk0t"]
 [ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="3_jsk0t"]

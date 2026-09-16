@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://e3pwxd34cvvi"]
+
+[ext_resource type="Script" uid="uid://krc0623g2txg" path="res://PlayButton.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=510522284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -66.0
+offset_right = -3.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="." unique_id=1078748410]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.036000002
+anchor_bottom = 0.048
+offset_left = 383.0
+offset_top = 232.0
+offset_right = 727.528
+offset_bottom = 386.896
+theme_override_font_sizes/font_size = 60
+text = "Play"
+script = ExtResource("1_06t4h")
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
