@@ -12,7 +12,7 @@ func on_door_collide(level_id):
 	
 	#EventBus.last_score=score
 	print(level_id)
-	TransitionManager.transition_to(TransitionManager.Scene.DEATH_SCREEN)
+	TransitionManager.transition_to(TransitionManager.Scene.MAIN_MENU)
 	#get_tree().call_deferred("change_scene_to_file", "res://transitions/level_complete.tscn")
 	
 func on_test_signal(message):
