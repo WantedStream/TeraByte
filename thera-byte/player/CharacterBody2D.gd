@@ -11,7 +11,7 @@ func _ready() -> void:
 	print("The script is attached and alive!")
 	
 	current_health = max_health
-	
+	EventBus.health_changed.emit(current_health)
 	# 2. Wire the interrupt to the Event Bus
 	EventBus.player_damaged.connect(take_damage)
 	
@@ -29,8 +29,8 @@ func take_damage(amount: int):
 	
 	# Let's print it to prove the math works
 	print("Ouch! Took ", amount, " damage. Health is now: ", current_health)
-	Values.ui_health=current_health
 	
+	EventBus.health_changed.emit(current_health)	
 	# Check if the player should be dead
 	if current_health <= 0:
 		current_health = 0 # Prevent negative numbers
