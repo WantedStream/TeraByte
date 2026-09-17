@@ -14,7 +14,7 @@ func _on_coin_collected(value: int):
 	Values.last_score += value
 	score_label.text = "Score: " + str(Values.last_score)
 func _on_player_damage(value: int):
-	health_label.text = "Health: " + str(Values.health)
+	health_label.text = "Health: " + str(Values.ui_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
