@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://kosptaf0jku6"]
+
+[ext_resource type="Script" uid="uid://buovmd4mvl8q8" path="res://menus/death_menu/death_scene.gd" id="1_po3gv"]
+
+[node name="DeathScene" type="Control" unique_id=714083047]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = -8.0
+offset_right = 1148.0
+offset_bottom = 642.0
+script = ExtResource("1_po3gv")
+
+[node name="YouDiedLabelel" type="Label" parent="." unique_id=815201592]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 263.0
+offset_right = 775.0
+offset_bottom = 447.0
+theme_override_font_sizes/font_size = 64
+text = "you died"
+
+[node name="RetryButton" type="Button" parent="." unique_id=1435876159]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 364.0
+offset_right = 613.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 32
+text = "retry"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

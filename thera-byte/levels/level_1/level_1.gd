@@ -8,10 +8,12 @@ func _ready() -> void:
 	EventBus.player_damaged.connect(on_player_damaged)
 	EventBus.finish_level.connect(on_door_collide)
 	pass # Replace with function body.
-func on_door_collide(stats):
-	print('level complete')
-	EventBus.last_score = stats
-	get_tree().call_deferred("change_scene_to_file", "res://transitions/level_complete.tscn")
+func on_door_collide(level_id):
+	
+	#EventBus.last_score=score
+	print(level_id)
+	TransitionManager.transition_to(TransitionManager.Scene.DEATH_SCREEN)
+	#get_tree().call_deferred("change_scene_to_file", "res://transitions/level_complete.tscn")
 	
 func on_test_signal(message):
 	print("THE MAIN LEVEL HEARD: ", message)

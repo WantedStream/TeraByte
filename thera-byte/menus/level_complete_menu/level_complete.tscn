@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dbd0qyej6gdvo"]
 
-[ext_resource type="Script" uid="uid://ch4lj8bagf7ap" path="res://level_complete.gd" id="1_s1w5k"]
-[ext_resource type="Script" uid="uid://dv8q1u12nr3wh" path="res://transitions/main_menu_button.gd" id="2_bxi80"]
+[ext_resource type="Script" uid="uid://ch4lj8bagf7ap" path="res://menus/level_complete_menu/level_complete.gd" id="1_b82s5"]
+[ext_resource type="Script" uid="uid://dv8q1u12nr3wh" path="res://menus/main_menu/main_menu_button.gd" id="2_t0pfq"]
 
 [node name="LevelComplete" type="Control" unique_id=1506905888]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_s1w5k")
+script = ExtResource("1_b82s5")
 
 [node name="Title" type="Label" parent="." unique_id=1752210006]
 layout_mode = 0
@@ -36,6 +36,6 @@ offset_right = 731.0
 offset_bottom = 436.0
 theme_override_font_sizes/font_size = 32
 text = "back to main menu"
-script = ExtResource("2_bxi80")
+script = ExtResource("2_t0pfq")
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

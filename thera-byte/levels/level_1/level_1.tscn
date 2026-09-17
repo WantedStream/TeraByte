@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://o0sru36lcs4x"]
+
+[ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://levels/level_1/level_1.gd" id="1_fi65l"]
+[ext_resource type="PackedScene" uid="uid://ch4vnsqjhavrr" path="res://hud/hud.tscn" id="2_1dqib"]
+[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player/player_node.tscn" id="3_hhi4c"]
+[ext_resource type="PackedScene" uid="uid://cmcn1sm7v5lmy" path="res://hazard/hazard.tscn" id="4_g0pf7"]
+[ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="5_wbmc6"]
+[ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="6_klepv"]
+[ext_resource type="PackedScene" uid="uid://baoty6hk7gic2" path="res://transition_door/transition_door.tscn" id="7_53gjn"]
+
+[node name="MainLevel" type="Node2D" unique_id=1682213557]
+script = ExtResource("1_fi65l")
+
+[node name="HUD" parent="." unique_id=64284090 instance=ExtResource("2_1dqib")]
+
+[node name="CharacterBody2D" parent="." unique_id=1185049311 instance=ExtResource("3_hhi4c")]
+position = Vector2(-314, 112)
+
+[node name="Hazard" parent="." unique_id=1702430680 instance=ExtResource("4_g0pf7")]
+position = Vector2(313, 40)
+scale = Vector2(2, 2)
+
+[node name="Coin" parent="." unique_id=422494176 instance=ExtResource("5_wbmc6")]
+position = Vector2(1, 157)
+
+[node name="TileMapLayer" parent="." unique_id=1882126655 instance=ExtResource("6_klepv")]
+tile_map_data = PackedByteArray("AAD8/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAAEAAEAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAD7/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAD5/wMAAQAAAAAAAAD4/wMAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAEAAQAAAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAARAAMAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAIAAQAAAAAAAAAbAAIAAQAAAAAAAAAcAAIAAQAAAAAAAAAdAAIAAQAAAAAAAAAeAAIAAQAAAAAAAAAfAAIAAQAAAAAAAAAgAAIAAQAAAAAAAAAhAAIAAQAAAAAAAAAiAAIAAQAAAAAAAAA=")
+
+[node name="Coin2" parent="." unique_id=642499919 instance=ExtResource("5_wbmc6")]
+position = Vector2(1017, 170)
+
+[node name="Coin3" parent="." unique_id=674054063 instance=ExtResource("5_wbmc6")]
+position = Vector2(606, 172)
+
+[node name="TransitionDoor" parent="." unique_id=1814065277 instance=ExtResource("7_53gjn")]
+position = Vector2(2206, 89)

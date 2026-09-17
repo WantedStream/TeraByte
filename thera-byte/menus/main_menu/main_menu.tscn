@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e3pwxd34cvvi"]
 
-[ext_resource type="Script" uid="uid://krc0623g2txg" path="res://PlayButton.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://krc0623g2txg" path="res://menus/main_menu/PlayButton.gd" id="1_xbn2l"]
 
 [node name="MainMenu" type="Control" unique_id=510522284]
 layout_mode = 3
@@ -25,6 +25,6 @@ offset_right = 727.528
 offset_bottom = 386.896
 theme_override_font_sizes/font_size = 60
 text = "Play"
-script = ExtResource("1_06t4h")
+script = ExtResource("1_xbn2l")
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]

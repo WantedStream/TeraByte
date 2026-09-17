@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var score_label = $ScoreLabel
-var total_score = 0
+#var total_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +10,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_coin_collected(value: int):
-	total_score += value
-	score_label.text = "Score: " + str(total_score)
+	EventBus.last_score += value
+	score_label.text = "Score: " + str(EventBus.last_score)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

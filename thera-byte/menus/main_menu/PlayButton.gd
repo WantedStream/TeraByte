@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://transitions/main_level/main_level.tscn")
+	TransitionManager.transition_to(TransitionManager.Scene.LEVEL_1)
 	pass # Replace with function body.

@@ -1,0 +1,18 @@
+extends Control
+
+@onready var score_label = $FinalScoreLabel
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	score_label.text = "Final Score: " + str(EventBus.last_score)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_main_menu_button_pressed() -> void:
+	TransitionManager.transition_to(TransitionManager.Scene.MAIN_MENU)
+	
+	pass # Replace with function body.

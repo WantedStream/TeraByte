@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*uid://bmmrannaoqjt3"
+Values="*uid://qqf22x71ey5d"
+TransitionManager="*uid://bdoj0v6len2qe"
 
 [display]
 
