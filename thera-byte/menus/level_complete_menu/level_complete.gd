@@ -3,7 +3,8 @@ extends Control
 @onready var score_label = $FinalScoreLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	score_label.text = "Final Score: " + str(EventBus.last_score)
+	score_label.text = "Final Score: " + str(Values.last_score)
+	Values.last_score=0
 	pass # Replace with function body.
 
 

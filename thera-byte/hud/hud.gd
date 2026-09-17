@@ -10,8 +10,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_coin_collected(value: int):
-	EventBus.last_score += value
-	score_label.text = "Score: " + str(EventBus.last_score)
+	Values.last_score += value
+	score_label.text = "Score: " + str(Values.last_score)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
