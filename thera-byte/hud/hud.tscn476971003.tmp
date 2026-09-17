@@ -16,8 +16,5 @@ offset_bottom = -10.880001
 text = "Score: 0"
 
 [node name="HealthLabel" type="Label" parent="." unique_id=1227795276]
-offset_left = 10.0
-offset_top = 23.0
-offset_right = 70.0
-offset_bottom = 46.0
-text = "health"
+offset_right = 40.0
+offset_bottom = 23.0
