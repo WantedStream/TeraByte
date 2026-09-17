@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c0y6i8r0utqt6"]
+
+[ext_resource type="Script" uid="uid://dfcbk55pn7hyu" path="res://menus/level_selector/level_selector.gd" id="1_pcbnn"]
+
+[node name="LevelSelector" type="Control" unique_id=982751149]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pcbnn")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1289420155]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -195.0
+offset_right = 195.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 10
+
+[node name="TemplateButton" type="Button" parent="GridContainer" unique_id=1378589086]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "1"
