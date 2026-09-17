@@ -1,8 +1,9 @@
-extends Button
+extends Control
 
-
+@onready var score_label = $FinalScoreLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	score_label.text = "Final Score: " + str(EventBus.last_score)
 	pass # Replace with function body.
 
 
@@ -11,6 +12,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://transitions/main_level/main_level.tscn")
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 	pass # Replace with function body.

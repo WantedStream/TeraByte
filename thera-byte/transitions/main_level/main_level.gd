@@ -10,7 +10,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 func on_door_collide(stats):
 	print('level complete')
-	get_tree().call_deferred("change_scene_to_file", "res://main_menu.tscn")
+	EventBus.last_score = stats
+	get_tree().call_deferred("change_scene_to_file", "res://transitions/level_complete.tscn")
+	
 func on_test_signal(message):
 	print("THE MAIN LEVEL HEARD: ", message)
 	
