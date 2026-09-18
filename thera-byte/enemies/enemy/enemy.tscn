@@ -4,10 +4,13 @@
 [ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player/state_machine.gd" id="2_xcpnu"]
 [ext_resource type="Script" uid="uid://c78s0uc0oqvmx" path="res://enemies/enemy/patrol.gd" id="3_kr7ob"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcpnu"]
+
 [node name="Enemy" type="CharacterBody2D" unique_id=800958931]
 script = ExtResource("1_wvxv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1493121032]
+shape = SubResource("CircleShape2D_xcpnu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=999899368]
 
