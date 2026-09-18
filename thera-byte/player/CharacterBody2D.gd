@@ -40,7 +40,7 @@ func level_complete():
 func die():
 	print("THE PLAYER HAS REACHED 0 HEALTH!")
 	#get_tree().call_deferred("reload_current_scene")
-	TransitionManager.transition_to(TransitionManager.Scene.DEATH_SCREEN)
+	TransitionManager.open_menu(TransitionManager.Menu.DEATH_SCREEN)
 	# We will build the actual death logic (like switching to a Death state) later.
 #func _physics_process(delta):
 		#var direction=Input.get_vector("left","right","up","down")

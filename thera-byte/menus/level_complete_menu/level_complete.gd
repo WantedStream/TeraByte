@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_main_menu_button_pressed() -> void:
-	TransitionManager.transition_to(TransitionManager.Scene.MAIN_MENU)
+	TransitionManager.open_menu(TransitionManager.Menu.MAIN_MENU)
 	
 	pass # Replace with function body.

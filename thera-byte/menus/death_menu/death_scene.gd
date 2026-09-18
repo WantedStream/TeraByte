@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_retry_button_pressed() -> void:
-		TransitionManager.transition_to(TransitionManager.Scene.MAIN_MENU)
+		TransitionManager.open_menu(TransitionManager.Menu.MAIN_MENU)

@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	TransitionManager.transition_to(TransitionManager.Scene.LEVEL_1)
+	TransitionManager.open_menu(TransitionManager.Menu.LEVEL_SELECTOR)
 	pass # Replace with function body.

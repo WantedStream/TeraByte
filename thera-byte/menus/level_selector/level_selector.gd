@@ -5,7 +5,7 @@ extends Control
 @onready var prev_button = $HBoxContainer/PrevButton
 @onready var next_button = $HBoxContainer/NextButton
 
-var total_levels = 50
+var total_levels = TransitionManager.get_total_levels()
 var levels_per_page = 20
 var current_page = 0
 
@@ -49,3 +49,4 @@ func _on_next_pressed():
 
 func _on_level_button_pressed(level_number: int):
 	print("The player clicked button number: ", level_number)
+	TransitionManager.load_level(level_number)
