@@ -6,6 +6,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xcpnu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ocyt"]
+
 [node name="Enemy" type="CharacterBody2D" unique_id=800958931]
 script = ExtResource("1_wvxv8")
 
@@ -22,3 +24,11 @@ initial_state = NodePath("Patrol")
 
 [node name="Patrol" type="Node" parent="StateMachine" unique_id=1937780281]
 script = ExtResource("3_kr7ob")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1093335884]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=407098163]
+shape = SubResource("RectangleShape2D_1ocyt")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

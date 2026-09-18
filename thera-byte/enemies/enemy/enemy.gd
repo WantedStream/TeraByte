@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Universal logic: Every single enemy hurts the player on contact.
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "CharacterBody2D":
 		EventBus.player_damaged.emit(contact_damage)
