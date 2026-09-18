@@ -1,28 +1,51 @@
 extends Control
 
 @onready var grid = $GridContainer
-@onready var template_button = $GridContainer/TemplateButton
+@onready var template_button = $TemplateButton
+@onready var prev_button = $HBoxContainer/PrevButton
+@onready var next_button = $HBoxContainer/NextButton
+
+var total_levels = 50
+var levels_per_page = 20
+var current_page = 0
 
 func _ready():
-	# Setup the first button manually
-	template_button.text = "1"
-	# The .bind() trick tells the button to remember its specific number!
-	template_button.pressed.connect(_on_level_button_pressed.bind(1))
+	# Connect the navigation buttons
+	prev_button.pressed.connect(_on_prev_pressed)
+	next_button.pressed.connect(_on_next_pressed)
 	
-	# Loop from 2 up to 50
-	for i in range(2, 51):
-		var new_button = template_button.duplicate()
-		new_button.text = str(i) # Set the text to the current number
-		
-		grid.add_child(new_button) # Drop it into the GridContainer
-		
-		# Connect the signal and bind the current loop number to it
-		new_button.pressed.connect(_on_level_button_pressed.bind(i))
+	# Draw the very first page
+	update_page()
 
-# This single function handles all 50 buttons!
+func update_page():
+	# 1. Wipe the old buttons from the grid
+	for child in grid.get_children():
+		child.queue_free()
+		
+	# 2. Calculate the math for this specific page
+	var start_level = (current_page * levels_per_page) + 1
+	var end_level = min(start_level + levels_per_page, total_levels + 1)
+	
+	# 3. Generate just the buttons for this page
+	for i in range(start_level, end_level):
+		var new_button = template_button.duplicate()
+		new_button.text = str(i)
+		new_button.show() # Unhide the clone!
+		grid.add_child(new_button)
+		
+		new_button.pressed.connect(_on_level_button_pressed.bind(i))
+		
+	# 4. Turn off the Prev/Next buttons if we are at the absolute edges
+	prev_button.disabled = (current_page == 0)
+	next_button.disabled = (end_level > total_levels)
+
+func _on_prev_pressed():
+	current_page -= 1
+	update_page()
+
+func _on_next_pressed():
+	current_page += 1
+	update_page()
+
 func _on_level_button_pressed(level_number: int):
 	print("The player clicked button number: ", level_number)
-	
-	# Later, we can do something like:
-	# if level_number == 1:
-	#     TransitionManager.switch_to(TransitionManager.Scene.MAIN_LEVEL)

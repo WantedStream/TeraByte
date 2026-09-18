@@ -11,25 +11,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pcbnn")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1289420155]
+[node name="TemplateButton" type="Button" parent="." unique_id=1378589086]
+visible = false
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 0
+offset_left = 381.0
+offset_top = 129.0
+offset_right = 461.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 64
+text = "1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=453416153]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -88.0
+offset_right = 66.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="PrevButton" type="Button" parent="HBoxContainer" unique_id=6520044]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "<"
+
+[node name="NextButton" type="Button" parent="HBoxContainer" unique_id=95004429]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = ">"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1973264350]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = -195.0
-offset_right = 195.0
-offset_bottom = 195.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
-columns = 10
-
-[node name="TemplateButton" type="Button" parent="GridContainer" unique_id=1378589086]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "1"
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
