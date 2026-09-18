@@ -2,7 +2,7 @@ class_name Actor
 extends CharacterBody2D
 
 # --- Universal Physics Constants ---
-const GRAVITY: float = 980.0
+const gravity: float = 980.0
 @export var speed: float = 400.0 # ADD THIS
 # --- Universal Stats ---
 @export var max_health: int = 3
@@ -14,7 +14,7 @@ func _ready() -> void:
 # Every single character falls, so we write the math exactly once here.
 func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		velocity.y += gravity * delta
 
 # Universal health logic for players, NPCs, and bosses.
 func take_damage(amount: int) -> void:

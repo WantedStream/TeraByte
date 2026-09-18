@@ -4,8 +4,8 @@ extends State
 var direction: float = -1.0 # -1 is left, 1 is right
 
 func enter():
-	if animator.has_animation("walk"):
-		animator.play("walk")
+	if animator.has_animation("walker_patrol_animation"):
+		animator.play("walker_patrol_animation")
 
 func physics_update(delta):
 	# 1. Inherit gravity from the Actor class
