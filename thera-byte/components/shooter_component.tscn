@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byuq48tnsbj0p"]
+
+[ext_resource type="Script" uid="uid://bpx8j2gowth" path="res://components/shooter_component.gd" id="1_hd5q4"]
+
+[node name="ShooterComponent" type="Node2D" unique_id=622750212]
+script = ExtResource("1_hd5q4")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1057145807]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dj28vscq7tf6i"]
+
+[ext_resource type="PackedScene" uid="uid://3i4e7cfataky" path="res://enemies/enemy/enemy.tscn" id="1_ltqxl"]
+[ext_resource type="Script" uid="uid://cvxkersuhg7tn" path="res://enemies/gunner/ranged_attack.gd" id="2_020o4"]
+[ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_chmo8"]
+
+[node name="Gunner" unique_id=800958931 instance=ExtResource("1_ltqxl")]
+
+[node name="ShooterComponent" parent="." index="0" unique_id=622750212 instance=ExtResource("2_chmo8")]
+
+[node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="1" unique_id=1439062927]
+script = ExtResource("2_020o4")
