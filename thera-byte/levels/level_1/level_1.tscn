@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="6_klepv"]
 [ext_resource type="PackedScene" uid="uid://baoty6hk7gic2" path="res://transition_door/transition_door.tscn" id="7_53gjn"]
 [ext_resource type="PackedScene" uid="uid://dl5apfp8qhcw3" path="res://enemies/walker/patrol/walker.tscn" id="8_j48du"]
+[ext_resource type="PackedScene" uid="uid://dj28vscq7tf6i" path="res://enemies/gunner/gunner.tscn" id="9_8jbay"]
 
 [node name="MainLevel" type="Node2D" unique_id=1682213557]
 script = ExtResource("1_fi65l")
@@ -38,3 +39,6 @@ position = Vector2(2206, 89)
 
 [node name="Walker" parent="." unique_id=800958931 instance=ExtResource("8_j48du")]
 position = Vector2(-96, 161)
+
+[node name="Gunner" parent="." unique_id=1230784278 instance=ExtResource("9_8jbay")]
+position = Vector2(94, 169)

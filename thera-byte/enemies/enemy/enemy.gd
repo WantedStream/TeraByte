@@ -2,6 +2,7 @@ class_name Enemy
 extends Actor
 
 @export var contact_damage: int = 1
+@onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	super() # Grabs the starting health from Actor

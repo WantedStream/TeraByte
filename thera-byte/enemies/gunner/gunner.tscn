@@ -3,10 +3,101 @@
 [ext_resource type="PackedScene" uid="uid://3i4e7cfataky" path="res://enemies/enemy/enemy.tscn" id="1_ltqxl"]
 [ext_resource type="Script" uid="uid://cvxkersuhg7tn" path="res://enemies/gunner/ranged_attack.gd" id="2_020o4"]
 [ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_chmo8"]
+[ext_resource type="Script" uid="uid://c8x7p5rhsg33m" path="res://enemies/gunner/gunner.gd" id="2_myxnl"]
+[ext_resource type="PackedScene" uid="uid://b47lek421p82v" path="res://projectiles/projectile.tscn" id="3_chmo8"]
+[ext_resource type="Texture2D" uid="uid://xwl7pp4hv1ek" path="res://enemies/gunner/gunner_texture.png" id="4_syx7i"]
+
+[sub_resource type="Animation" id="Animation_myxnl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_syx7i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bkrky"]
+resource_name = "gunner_animation"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_syx7i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vx48q"]
+_data = {
+&"RESET": SubResource("Animation_myxnl"),
+&"gunner_animation": SubResource("Animation_bkrky")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 106.16968
 
 [node name="Gunner" unique_id=800958931 instance=ExtResource("1_ltqxl")]
+script = ExtResource("2_myxnl")
 
 [node name="ShooterComponent" parent="." index="0" unique_id=622750212 instance=ExtResource("2_chmo8")]
+projectile_scene = ExtResource("3_chmo8")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1493121032]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" parent="." index="2" unique_id=999899368]
+scale = Vector2(2, 2)
+texture = ExtResource("4_syx7i")
+vframes = 2
+
+[node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
+libraries/ = SubResource("AnimationLibrary_vx48q")
 
 [node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="1" unique_id=1439062927]
 script = ExtResource("2_020o4")
+
+[node name="DetectionZone" type="Area2D" parent="." index="6" unique_id=1741140205]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" index="0" unique_id=663358610]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]

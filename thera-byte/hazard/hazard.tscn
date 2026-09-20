@@ -68,6 +68,7 @@ _data = {
 }
 
 [node name="Hazard" type="Area2D" unique_id=1702430680]
+collision_mask = 2
 script = ExtResource("1_2jias")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1035717538]

@@ -32,3 +32,19 @@ func on_child_transition(state, new_state_name):
 	current_state.exit()
 	new_state.enter()
 	current_state = new_state
+	# This allows the root character script to aggressively interrupt the current state
+func force_transition(new_state_name: String):
+	var new_state = states.get(new_state_name.to_lower())
+	
+	if not new_state:
+		return
+		
+	# Don't restart the state if we are already in it
+	if current_state == new_state:
+		return
+		
+	if current_state:
+		current_state.exit()
+		
+	new_state.enter()
+	current_state = new_state

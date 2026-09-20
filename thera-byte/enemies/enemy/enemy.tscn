@@ -9,6 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ocyt"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=800958931]
+collision_layer = 4
 script = ExtResource("1_wvxv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1493121032]

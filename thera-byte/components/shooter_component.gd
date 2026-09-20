@@ -11,3 +11,4 @@ func fire_projectile(direction: Vector2) -> void:
 		get_tree().current_scene.add_child(bullet)
 		bullet.global_position = spawn_point.global_position
 		bullet.set_direction(direction)
+		print("bullet spawned")

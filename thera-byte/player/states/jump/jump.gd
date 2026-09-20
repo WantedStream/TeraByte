@@ -1,8 +1,8 @@
 extends State
-
+@export var jump_velocity: float =-550
 func enter():
 	animator.play("jump")
-	actor.velocity.y = -400.0 # Set your jump velocity here
+	actor.velocity.y = jump_velocity # Set your jump velocity here
 
 func physics_update(delta):
 	actor.apply_gravity(delta)
