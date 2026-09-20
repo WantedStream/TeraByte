@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xwl7pp4hv1ek"
-path="res://.godot/imported/gunner_texture.png-0b330165f1618e588a5b7f6d31e5bdcf.ctex"
+path="res://.godot/imported/gunner_ranged_attack_texture.png-542a9e8cb20e78b55d6ad8a515a3dad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/gunner/gunner_texture.png"
-dest_files=["res://.godot/imported/gunner_texture.png-0b330165f1618e588a5b7f6d31e5bdcf.ctex"]
+source_file="res://enemies/gunner/gunner_ranged_attack_texture.png"
+dest_files=["res://.godot/imported/gunner_ranged_attack_texture.png-542a9e8cb20e78b55d6ad8a515a3dad7.ctex"]
 
 [params]
 

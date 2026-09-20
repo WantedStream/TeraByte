@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_chmo8"]
 [ext_resource type="Script" uid="uid://c8x7p5rhsg33m" path="res://enemies/gunner/gunner.gd" id="2_myxnl"]
 [ext_resource type="PackedScene" uid="uid://b47lek421p82v" path="res://projectiles/projectile.tscn" id="3_chmo8"]
-[ext_resource type="Texture2D" uid="uid://xwl7pp4hv1ek" path="res://enemies/gunner/gunner_texture.png" id="4_syx7i"]
+[ext_resource type="Texture2D" uid="uid://xwl7pp4hv1ek" path="res://enemies/gunner/gunner_ranged_attack_texture.png" id="4_syx7i"]
 
 [sub_resource type="Animation" id="Animation_myxnl"]
-length = 0.001
+length = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,15 +28,44 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 1,
-"values": [0]
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ab1v7"]
+resource_name = "gunner_patrol_animation"
+length = 0.76666665
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
 }
 
 [sub_resource type="Animation" id="Animation_bkrky"]
-resource_name = "gunner_animation"
-length = 0.7
+resource_name = "gunner_ranged_attack_animation"
+length = 0.73333335
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,7 +86,7 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999, 0.3),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -66,7 +95,8 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vx48q"]
 _data = {
 &"RESET": SubResource("Animation_myxnl"),
-&"gunner_animation": SubResource("Animation_bkrky")
+&"gunner_patrol_animation": SubResource("Animation_ab1v7"),
+&"gunner_ranged_attack_animation": SubResource("Animation_bkrky")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
@@ -85,6 +115,7 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("4_syx7i")
 vframes = 2
+frame = 1
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_vx48q")
