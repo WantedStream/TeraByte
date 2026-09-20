@@ -115,6 +115,7 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("4_syx7i")
 vframes = 2
+frame = 1
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_vx48q")

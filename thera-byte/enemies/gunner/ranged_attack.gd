@@ -3,7 +3,7 @@ extends State
 var shooter: ShooterComponent
 
 func enter():
-	animator.play("gunner_ranged_attack_animation") # Make sure your animation is exactly named "shoot"
+	animator.play("shoot") # Make sure your animation is exactly named "shoot"
 	shooter = actor.get_node_or_null("ShooterComponent")
 	
 	if shooter:

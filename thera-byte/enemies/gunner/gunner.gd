@@ -29,3 +29,7 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 	print("player detected")
 	state_machine.force_transition("RangedAttack")
 	pass # Replace with function body.
+
+
+func _on_detection_zone_body_exited(body: Node2D) -> void:
+		state_machine.force_transition("Patrol")

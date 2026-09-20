@@ -104,6 +104,9 @@ radius = 106.16968
 
 [node name="Gunner" unique_id=800958931 instance=ExtResource("1_ltqxl")]
 script = ExtResource("2_myxnl")
+contact_damage = null
+speed = null
+max_health = null
 
 [node name="ShooterComponent" parent="." index="0" unique_id=622750212 instance=ExtResource("2_chmo8")]
 projectile_scene = ExtResource("3_chmo8")
