@@ -1,41 +1,38 @@
 extends State
 
-var shooter: ShooterComponent
 @export var animation_name: String = ""
-@export var fire_rate: float = 1.0 # How many seconds between each shot
+@export var fire_rate: float = 1.0
+@export var component_name: String = "ShooterComponent" # Tell the inspector which node to look for
 
 var time_since_last_shot: float = 0.0
 
 func enter():
-	shooter = actor.get_node_or_null("ShooterComponent")
-	# Set this to fire_rate so the enemy shoots instantly the moment the player enters
 	time_since_last_shot = fire_rate 
 
 func physics_update(delta: float):
-	# 1. Constantly count up using delta (the time between frames)
 	time_since_last_shot += delta
-	
-	# 2. When enough time has passed, fire a bullet and reset the clock
 	if time_since_last_shot >= fire_rate:
 		time_since_last_shot = 0.0
-		_aim_and_shoot()
+		_aim_and_attack()
 
-# The actual math for aiming and shooting
-func _aim_and_shoot():
+func _aim_and_attack():
 	animator.play(animation_name)
+	
+	# Grab the generic component based on what you typed in the Inspector
+	var action_node = actor.get_node_or_null(component_name)
 	var detection_zone = actor.get_node_or_null("DetectionZone")
 	
-	if shooter and detection_zone:
+	if action_node and detection_zone:
 		var targets = detection_zone.get_overlapping_bodies()
-		
 		if targets.size() > 0:
 			var player = targets[0] 
-			
-			# Calculate angle and flip sprite
 			var direction = (player.global_position - actor.global_position).normalized()
+			
 			var sprite = actor.get_node_or_null("Sprite2D")
 			if sprite:
 				sprite.flip_h = (direction.x > 0)
 			
-			# Fire!
-			shooter.fire_projectile(direction)
+			# The state doesn't care if it's a gun or a sword. 
+			# It just hits the universal execute button.
+			if action_node.has_method("execute_action"):
+				action_node.execute_action(direction)
