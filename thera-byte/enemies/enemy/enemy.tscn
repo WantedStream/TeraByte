@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://doikogks05suo" path="res://enemies/enemy/enemy.gd" id="1_wvxv8"]
 [ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player/state_machine.gd" id="2_xcpnu"]
 [ext_resource type="Script" uid="uid://c78s0uc0oqvmx" path="res://enemies/enemy/patrol.gd" id="3_kr7ob"]
+[ext_resource type="Script" uid="uid://v5j4ck74rpc5" path="res://enemies/enemy/idle.gd" id="4_5ve00"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xcpnu"]
 
@@ -25,6 +26,9 @@ initial_state = NodePath("Patrol")
 
 [node name="Patrol" type="Node" parent="StateMachine" unique_id=1937780281]
 script = ExtResource("3_kr7ob")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=509644543]
+script = ExtResource("4_5ve00")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1093335884]
 collision_mask = 2
