@@ -34,4 +34,4 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
 		print("player left")
-		state_machine.force_transition("Patrol")
+		state_machine.force_transition("Idle")

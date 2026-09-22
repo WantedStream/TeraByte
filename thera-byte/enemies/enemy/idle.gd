@@ -16,7 +16,6 @@ var direction: float = -1.0 # -1 is left, 1 is right
 func enter():
 	if animator.has_animation(animation_name):
 		animator.play(animation_name)
-		
 		actor.velocity.x = 0.0
 func physics_update(delta):
 	# 1. Inherit gravity from the Actor class

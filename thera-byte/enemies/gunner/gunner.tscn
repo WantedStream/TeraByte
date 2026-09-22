@@ -120,15 +120,18 @@ frame = 1
 [node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_vx48q")
 
-[node name="Patrol" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="0" unique_id=1937780281]
+[node name="StateMachine" parent="." index="4" unique_id=983240821 node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Idle")
+
+[node name="Patrol" parent="StateMachine" index="0" unique_id=1937780281]
 animation_name = "gunner_patrol_animation"
 
-[node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="1" unique_id=1439062927]
+[node name="RangedAttack" type="Node" parent="StateMachine" index="1" unique_id=1439062927]
 script = ExtResource("2_020o4")
 animation_name = "gunner_ranged_attack_animation"
 
-[node name="Idle" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="2" unique_id=509644543]
-animation_name = "gunner_patrol_texture"
+[node name="Idle" parent="StateMachine" index="2" unique_id=509644543]
+animation_name = "gunner_patrol_animation"
 
 [node name="DetectionZone" type="Area2D" parent="." index="6" unique_id=1741140205]
 collision_layer = 0
