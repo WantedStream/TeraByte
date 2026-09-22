@@ -12,7 +12,36 @@ length = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_syx7i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ab1v7"]
+resource_name = "gunner_patrol_animation"
+length = 0.76666665
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,60 +53,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture:load_path")
+tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["res://.godot/imported/gunner_patrol_texture.png-a329b2e799ed59900d7da5aa57281ecd.ctex"]
-}
-
-[sub_resource type="Animation" id="Animation_ab1v7"]
-resource_name = "gunner_patrol_animation"
-length = 0.76666665
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
 "times": PackedFloat32Array(0.033333335, 0.26666668),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture:load_path")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["res://.godot/imported/gunner_patrol_texture.png-a329b2e799ed59900d7da5aa57281ecd.ctex"]
-}
 
 [sub_resource type="Animation" id="Animation_bkrky"]
 resource_name = "gunner_ranged_attack_animation"
-length = 0.9
+length = 0.73333335
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture:load_path")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["res://.godot/imported/gunner_ranged_attack_texture.png-542a9e8cb20e78b55d6ad8a515a3dad7.ctex"]
+"values": [ExtResource("4_syx7i")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -86,7 +86,7 @@ tracks/1/path = NodePath("Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 0.4),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -115,17 +115,12 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("4_syx7i")
 vframes = 2
-frame = 1
 
 [node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_vx48q")
 
-[node name="Patrol" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="0" unique_id=1937780281]
-animation_name = "gunner_patrol_animation"
-
 [node name="RangedAttack" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="1" unique_id=1439062927]
 script = ExtResource("2_020o4")
-animation_name = "gunner_ranged_attack_animation"
 
 [node name="DetectionZone" type="Area2D" parent="." index="6" unique_id=1741140205]
 collision_layer = 0

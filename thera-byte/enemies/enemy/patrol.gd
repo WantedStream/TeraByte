@@ -1,12 +1,13 @@
 extends State
 
 @export var patrol_speed: float = 100.0
+@export var animation_name: String = ""
 var direction: float = -1.0 # -1 is left, 1 is right
 
 func enter():
-	if animator.has_animation("walker_patrol_animation"):
-		animator.play("walker_patrol_animation")
-
+	if animator.has_animation(animation_name):
+		animator.play(animation_name)
+		print(animation_name)
 func physics_update(delta):
 	# 1. Inherit gravity from the Actor class
 	actor.apply_gravity(delta)

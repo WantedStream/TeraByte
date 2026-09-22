@@ -1,10 +1,11 @@
 extends State
 
 var shooter: ShooterComponent
+@export var animation_name: String = ""
 
 func enter():
-	animator.play("shoot") # Make sure your animation is exactly named "shoot"
-	shooter = actor.get_node_or_null("ShooterComponent")
+	animator.play(animation_name) # Make sure your animation is exactly named "shoot"
+	shooter = actor.get_node_or_null("RangedAttack")
 	
 	if shooter:
 		shooter.fire_projectile(Vector2.LEFT)
@@ -14,7 +15,7 @@ func enter():
 		animator.animation_finished.connect(_on_animation_finished)
 
 func _on_animation_finished(anim_name: String):
-	if anim_name == "shoot":
+	if anim_name == animation_name:
 		var detection_zone = actor.get_node_or_null("DetectionZone")
 		
 		# 1. Evaluate: Is the player still inside the zone?
