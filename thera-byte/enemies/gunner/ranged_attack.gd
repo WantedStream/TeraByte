@@ -5,10 +5,26 @@ var shooter: ShooterComponent
 
 func enter():
 	animator.play(animation_name) # Make sure your animation is exactly named "shoot"
-	shooter = actor.get_node_or_null("RangedAttack")
+	shooter = actor.get_node_or_null("ShooterComponent")
+	var detection_zone = actor.get_node_or_null("DetectionZone")
 	
-	if shooter:
-		shooter.fire_projectile(Vector2.LEFT)
+	if shooter and detection_zone:
+		# 1. Grab all bodies currently inside the Area2D
+		var targets = detection_zone.get_overlapping_bodies()
+		
+		if targets.size() > 0:
+			var player = targets[0] # Mask 2 guarantees this is the player
+			
+			# 2. Calculate the direction from the enemy to the player
+			var direction = (player.global_position - actor.global_position).normalized()
+			
+			# 3. Optional: Flip the enemy sprite to face the player while shooting
+			var sprite = actor.get_node_or_null("Sprite2D")
+			if sprite:
+				sprite.flip_h = (direction.x > 0)
+			
+			# 4. Fire the bullet in the calculated direction
+			shooter.fire_projectile(direction)
 		
 	# Ensure the animation actually tells this script when it's done
 	if not animator.animation_finished.is_connected(_on_animation_finished):
