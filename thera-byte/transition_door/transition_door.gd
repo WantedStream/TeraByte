@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		EventBus.finish_level.emit(level_id)
+		print("entered door")
 	pass # Replace with function body.
