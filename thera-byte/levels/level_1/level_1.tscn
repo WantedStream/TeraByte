@@ -42,3 +42,6 @@ position = Vector2(-96, 161)
 
 [node name="Gunner" parent="." unique_id=1230784278 instance=ExtResource("9_8jbay")]
 position = Vector2(94, 169)
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=180215436]
+position = Vector2(-430, 96)

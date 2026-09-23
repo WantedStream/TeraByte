@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://diup5j7a0ev2v"]
+
+[ext_resource type="Script" uid="uid://ct6c7gj2173sl" path="res://character_select.gd" id="1_fqef4"]
+
+[node name="CharacterSelect" type="Control" unique_id=2006253872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqef4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1916295091]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+
+[node name="KnightButton" type="Button" parent="HBoxContainer" unique_id=137870884]
+layout_mode = 2
+
+[node name="ArcherButton" type="Button" parent="HBoxContainer" unique_id=66477386]
+layout_mode = 2
+
+[node name="MagicianButton" type="Button" parent="HBoxContainer" unique_id=1967479079]
+layout_mode = 2
+
+[node name="TankButton" type="Button" parent="HBoxContainer" unique_id=1717232412]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/KnightButton" to="." method="_on_knight_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MagicianButton" to="." method="_on_magician_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/TankButton" to="." method="_on_tank_button_pressed"]

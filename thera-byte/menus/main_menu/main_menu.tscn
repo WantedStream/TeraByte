@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://e3pwxd34cvvi"]
 
-[ext_resource type="Script" uid="uid://krc0623g2txg" path="res://menus/main_menu/PlayButton.gd" id="1_xbn2l"]
+[ext_resource type="Script" uid="uid://5dey5lkss0rt" path="res://menus/main_menu/main_menu.gd" id="1_1nwmw"]
+
+[sub_resource type="GDScript" id="GDScript_xbn2l"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+ # Replace with function body.
+"
 
 [node name="MainMenu" type="Control" unique_id=510522284]
 layout_mode = 3
@@ -13,6 +30,7 @@ offset_right = -3.0
 offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1nwmw")
 
 [node name="PlayButton" type="Button" parent="." unique_id=1078748410]
 layout_mode = 1
@@ -25,6 +43,16 @@ offset_right = 727.528
 offset_bottom = 386.896
 theme_override_font_sizes/font_size = 60
 text = "Play"
-script = ExtResource("1_xbn2l")
+script = SubResource("GDScript_xbn2l")
 
+[node name="CharacterSelectorButton" type="Button" parent="." unique_id=1340642468]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 454.0
+offset_right = 693.0
+offset_bottom = 572.0
+text = "character selection"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="CharacterSelectorButton" to="." method="_on_character_selector_button_pressed"]

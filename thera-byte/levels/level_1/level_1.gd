@@ -1,8 +1,18 @@
 extends Node2D
 
-
+@onready var spawn_point = $PlayerSpawnPoint
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Values.selected_character:
+		# 1. Create the character from the global blueprint
+		var player_instance = Values.selected_character.instantiate()
+		
+		# 2. Add them to the level
+		add_child(player_instance)
+		
+		# 3. Move them to the spawn point
+		player_instance.global_position = spawn_point.global_position
+		
 	EventBus.test_signal_fired.connect(on_test_signal)
 	EventBus.coin_collected.connect(on_coin_collected)
 #	EventBus.player_damaged.connect(on_player_damaged)
