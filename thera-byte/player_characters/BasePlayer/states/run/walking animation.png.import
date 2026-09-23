@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50s3v0v630m"
-path="res://.godot/imported/fall_animation.png-98e8c7b44a0a565db0380f20dc7958e4.ctex"
+uid="uid://jgief3iijrnr"
+path="res://.godot/imported/walking animation.png-60e0ed696c389fde4e1160ac8bbfa9c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/states/fall/fall_animation.png"
-dest_files=["res://.godot/imported/fall_animation.png-98e8c7b44a0a565db0380f20dc7958e4.ctex"]
+source_file="res://player_characters/BasePlayer/states/run/walking animation.png"
+dest_files=["res://.godot/imported/walking animation.png-60e0ed696c389fde4e1160ac8bbfa9c5.ctex"]
 
 [params]
 

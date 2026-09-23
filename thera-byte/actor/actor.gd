@@ -1,6 +1,6 @@
 class_name Actor
 extends CharacterBody2D
-
+@export var jump_velocity: float = -400.0
 # --- Universal Physics Constants ---
 const gravity: float = 980.0
 @export var speed: float = 400.0 # ADD THIS

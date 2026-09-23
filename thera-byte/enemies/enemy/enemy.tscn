@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3i4e7cfataky"]
 
 [ext_resource type="Script" uid="uid://doikogks05suo" path="res://enemies/enemy/enemy.gd" id="1_wvxv8"]
-[ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player/state_machine.gd" id="2_xcpnu"]
+[ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player_characters/BasePlayer/state_machine.gd" id="2_xcpnu"]
 [ext_resource type="Script" uid="uid://c78s0uc0oqvmx" path="res://enemies/enemy/patrol.gd" id="3_kr7ob"]
 [ext_resource type="Script" uid="uid://v5j4ck74rpc5" path="res://enemies/enemy/idle.gd" id="4_5ve00"]
 
