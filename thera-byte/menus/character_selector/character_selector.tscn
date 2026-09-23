@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diup5j7a0ev2v"]
 
 [ext_resource type="Script" uid="uid://ct6c7gj2173sl" path="res://character_select.gd" id="1_fqef4"]
+[ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_texxture.png" id="2_7ditl"]
 
 [node name="CharacterSelect" type="Control" unique_id=2006253872]
 layout_mode = 3
@@ -18,36 +19,91 @@ offset_bottom = 649.0
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="ArcherButton" type="Button" parent="HBoxContainer" unique_id=66477386]
-custom_minimum_size = Vector2(100, 100)
+[node name="KnightSelection" type="VBoxContainer" parent="HBoxContainer" unique_id=1470587354]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="MagicianButton" type="Button" parent="HBoxContainer" unique_id=1967479079]
+[node name="Label" type="Label" parent="HBoxContainer/KnightSelection" unique_id=89571131]
+layout_mode = 2
+text = "knight"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/KnightSelection" unique_id=1125061915]
+layout_mode = 2
+texture = ExtResource("2_7ditl")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="KnightButton" type="Button" parent="HBoxContainer/KnightSelection" unique_id=137870884]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
+text = "select"
 
-[node name="TankButton" type="Button" parent="HBoxContainer" unique_id=1717232412]
-custom_minimum_size = Vector2(100, 100)
+[node name="ArcherSelection" type="VBoxContainer" parent="HBoxContainer" unique_id=660756966]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1470587354]
+[node name="Label" type="Label" parent="HBoxContainer/ArcherSelection" unique_id=997073820]
 layout_mode = 2
+text = "knight"
+horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=89571131]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/ArcherSelection" unique_id=1697533931]
 layout_mode = 2
+texture = ExtResource("2_7ditl")
+expand_mode = 4
+stretch_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer" unique_id=1125061915]
-layout_mode = 2
-
-[node name="KnightButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=137870884]
+[node name="ArcherButton" type="Button" parent="HBoxContainer/ArcherSelection" unique_id=1461872473]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
+text = "select"
 
-[connection signal="pressed" from="HBoxContainer/ArcherButton" to="." method="_on_archer_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/MagicianButton" to="." method="_on_magician_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/TankButton" to="." method="_on_tank_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/KnightButton" to="." method="_on_knight_button_pressed"]
+[node name="MagicianSelection" type="VBoxContainer" parent="HBoxContainer" unique_id=1336765553]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/MagicianSelection" unique_id=1643269929]
+layout_mode = 2
+text = "knight"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MagicianSelection" unique_id=243797863]
+layout_mode = 2
+texture = ExtResource("2_7ditl")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="MagicianButton" type="Button" parent="HBoxContainer/MagicianSelection" unique_id=425811477]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+text = "select"
+
+[node name="TankSelection" type="VBoxContainer" parent="HBoxContainer" unique_id=951081445]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/TankSelection" unique_id=1956341090]
+layout_mode = 2
+text = "knight"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TankSelection" unique_id=1449839401]
+layout_mode = 2
+texture = ExtResource("2_7ditl")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="TankButton" type="Button" parent="HBoxContainer/TankSelection" unique_id=109882178]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+text = "select"
+
+[connection signal="pressed" from="HBoxContainer/KnightSelection/KnightButton" to="." method="_on_knight_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ArcherSelection/ArcherButton" to="." method="_on_archer_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MagicianSelection/MagicianButton" to="." method="_on_magician_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/TankSelection/TankButton" to="." method="_on_tank_button_pressed"]
