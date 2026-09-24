@@ -7,12 +7,12 @@ extends BasePlayer
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
+	#if not is_on_floor():
+	#	velocity += get_gravity() * delta
+	#apply_gravity(delta)
 	
-	move_and_slide()
-
+	#move_and_slide()
+	pass
 
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
 	
