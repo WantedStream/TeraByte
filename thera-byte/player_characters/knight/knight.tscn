@@ -163,10 +163,21 @@ _data = {
 &"run": SubResource("Animation_l0yqv")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(122.75, 80)
+
 [node name="Knight" unique_id=1185049311 instance=ExtResource("1_ak4w8")]
 
 [node name="Sprite2D" parent="." index="2" unique_id=951811005]
+position = Vector2(5.499997, -9.999996)
+scale = Vector2(1.7968751, 1.8125001)
 texture = ExtResource("2_kacwe")
 
 [node name="AnimationPlayer" parent="." index="4" unique_id=1281104631]
 libraries/ = SubResource("AnimationLibrary_s2574")
+
+[node name="MeleeHitbox" type="Area2D" parent="." index="5" unique_id=226109183]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" index="0" unique_id=501030739]
+position = Vector2(116, -1)
+shape = SubResource("RectangleShape2D_g4v7s")
