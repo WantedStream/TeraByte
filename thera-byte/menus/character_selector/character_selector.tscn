@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diup5j7a0ev2v"]
 
 [ext_resource type="Script" uid="uid://ct6c7gj2173sl" path="res://character_select.gd" id="1_fqef4"]
+[ext_resource type="PackedScene" uid="uid://cl8ut5ndl6vtf" path="res://player_characters/knight/knight.tscn" id="2_3i8fi"]
 [ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_idle_animation_texture.png" id="2_7ditl"]
 
 [node name="CharacterSelect" type="Control" unique_id=2006253872]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fqef4")
+knight_scene = ExtResource("2_3i8fi")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1916295091]
 layout_mode = 0
@@ -46,7 +48,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/ArcherSelection" unique_id=997073820]
 layout_mode = 2
-text = "knight"
+text = "archer"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/ArcherSelection" unique_id=1697533931]
@@ -67,7 +69,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/MagicianSelection" unique_id=1643269929]
 layout_mode = 2
-text = "knight"
+text = "Magician"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MagicianSelection" unique_id=243797863]
@@ -88,7 +90,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/TankSelection" unique_id=1956341090]
 layout_mode = 2
-text = "knight"
+text = "Tank"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/TankSelection" unique_id=1449839401]
@@ -103,7 +105,16 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "select"
 
+[node name="MainMenuButton" type="Button" parent="." unique_id=1418956622]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 547.0
+offset_right = 195.0
+offset_bottom = 622.0
+text = "back"
+
 [connection signal="pressed" from="HBoxContainer/KnightSelection/KnightButton" to="." method="_on_knight_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/ArcherSelection/ArcherButton" to="." method="_on_archer_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/MagicianSelection/MagicianButton" to="." method="_on_magician_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/TankSelection/TankButton" to="." method="_on_tank_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

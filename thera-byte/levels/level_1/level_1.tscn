@@ -16,6 +16,7 @@ script = ExtResource("1_fi65l")
 [node name="HUD" parent="." unique_id=64284090 instance=ExtResource("2_1dqib")]
 
 [node name="CharacterBody2D" parent="." unique_id=1185049311 instance=ExtResource("3_hhi4c")]
+visible = false
 position = Vector2(-314, 112)
 
 [node name="Hazard" parent="." unique_id=1702430680 instance=ExtResource("4_g0pf7")]
