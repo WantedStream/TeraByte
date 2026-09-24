@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl8ut5ndl6vtf"]
 
 [ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_ak4w8"]
-[ext_resource type="Texture2D" uid="uid://crg118j034832" path="res://player_characters/knight/knight_animation_texture.png" id="2_kacwe"]
+[ext_resource type="Texture2D" uid="uid://bdaa4gte1fhw5" path="res://player_characters/knight/knight_animation_texture.png" id="2_kacwe"]
 
 [sub_resource type="Animation" id="Animation_ak4w8"]
 length = 0.8

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5x7stkb4wwl3"
-path="res://.godot/imported/knight_texxture.png-592c7a1dc9aad598dff5c17a486dae38.ctex"
+path="res://.godot/imported/knight_idle_animation_texture.png-0afaa59e230f8d5864f6aaad0d664f44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_characters/knight/knight_texxture.png"
-dest_files=["res://.godot/imported/knight_texxture.png-592c7a1dc9aad598dff5c17a486dae38.ctex"]
+source_file="res://player_characters/knight/knight_idle_animation_texture.png"
+dest_files=["res://.godot/imported/knight_idle_animation_texture.png-0afaa59e230f8d5864f6aaad0d664f44.ctex"]
 
 [params]
 
