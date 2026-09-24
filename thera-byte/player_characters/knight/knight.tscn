@@ -169,9 +169,6 @@ size = Vector2(122.75, 80)
 
 [node name="Knight" unique_id=1185049311 instance=ExtResource("1_ak4w8")]
 script = ExtResource("2_tlav8")
-jump_velocity = null
-speed = null
-max_health = null
 
 [node name="Sprite2D" parent="." index="2" unique_id=951811005]
 position = Vector2(5.499997, -9.999996)
@@ -182,8 +179,12 @@ texture = ExtResource("2_kacwe")
 libraries/ = SubResource("AnimationLibrary_s2574")
 
 [node name="MeleeHitbox" type="Area2D" parent="." index="5" unique_id=226109183]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" index="0" unique_id=501030739]
 position = Vector2(116, -1)
 shape = SubResource("RectangleShape2D_g4v7s")
 disabled = true
+
+[connection signal="body_entered" from="MeleeHitbox" to="." method="_on_melee_hitbox_body_entered"]
