@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_ak4w8"]
 [ext_resource type="Texture2D" uid="uid://bdaa4gte1fhw5" path="res://player_characters/knight/knight_animation_texture.png" id="2_kacwe"]
+[ext_resource type="Script" uid="uid://bw7d6kxlblj6v" path="res://player_characters/knight/knight.gd" id="2_tlav8"]
 
 [sub_resource type="Animation" id="Animation_ak4w8"]
 length = 0.8
@@ -167,6 +168,10 @@ _data = {
 size = Vector2(122.75, 80)
 
 [node name="Knight" unique_id=1185049311 instance=ExtResource("1_ak4w8")]
+script = ExtResource("2_tlav8")
+jump_velocity = null
+speed = null
+max_health = null
 
 [node name="Sprite2D" parent="." index="2" unique_id=951811005]
 position = Vector2(5.499997, -9.999996)
@@ -181,3 +186,4 @@ libraries/ = SubResource("AnimationLibrary_s2574")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" index="0" unique_id=501030739]
 position = Vector2(116, -1)
 shape = SubResource("RectangleShape2D_g4v7s")
+disabled = true

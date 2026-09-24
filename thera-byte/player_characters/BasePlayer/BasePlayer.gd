@@ -1,3 +1,5 @@
+class_name BasePlayer
+
 extends Actor
 # No need to declare gravity or speed here anymore!
 
