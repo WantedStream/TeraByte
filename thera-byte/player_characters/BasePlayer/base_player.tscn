@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://41rugr6lt41b"]
 
 [ext_resource type="Script" uid="uid://iurqut1p47dg" path="res://player_characters/BasePlayer/BasePlayer.gd" id="1_8vvam"]
-[ext_resource type="Texture2D" uid="uid://ddsfvvbtqvaht" path="res://player_characters/BasePlayer/states/idle/idle_animation.png" id="2_0vw6r"]
-[ext_resource type="Texture2D" uid="uid://c50s3v0v630m" path="res://player_characters/BasePlayer/states/fall/fall_animation.png" id="2_8em6v"]
 [ext_resource type="Script" uid="uid://dyxxkr5oqxmic" path="res://player_characters/BasePlayer/state_machine.gd" id="3_d0owe"]
-[ext_resource type="Script" uid="uid://cutsty7vioks7" path="res://player_characters/BasePlayer/states/idle/idle.gd" id="4_3nrky"]
-[ext_resource type="Script" uid="uid://cqbbvk1yo45a8" path="res://player_characters/BasePlayer/states/run/run.gd" id="5_fpdhf"]
-[ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player_characters/BasePlayer/states/jump/jump.gd" id="5_k12ae"]
-[ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player_characters/BasePlayer/states/fall/fall.gd" id="7_0vw6r"]
-[ext_resource type="Texture2D" uid="uid://x57lepf774sm" path="res://player_characters/BasePlayer/states/jump/jump_animation.png" id="9_x7ee2"]
-[ext_resource type="Texture2D" uid="uid://jgief3iijrnr" path="res://player_characters/BasePlayer/states/run/walking animation.png" id="10_13n82"]
+[ext_resource type="Script" uid="uid://cutsty7vioks7" path="res://player_characters/BasePlayer/states/idle.gd" id="4_3nrky"]
+[ext_resource type="Script" uid="uid://cqbbvk1yo45a8" path="res://player_characters/BasePlayer/states/run.gd" id="5_fpdhf"]
+[ext_resource type="Script" uid="uid://x5q0u54hragg" path="res://player_characters/BasePlayer/states/jump.gd" id="5_k12ae"]
+[ext_resource type="Script" uid="uid://cuatm1j02i4lo" path="res://player_characters/BasePlayer/states/fall.gd" id="7_0vw6r"]
+[ext_resource type="Script" uid="uid://jdfosds25icx" path="res://player_characters/BasePlayer/states/attack.gd" id="8_x7ee2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch5ey"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wgdas"]
+load_path = "res://.godot/imported/fall_animation.png-6ccf955377acbaa4d8469a1aa3865602.ctex"
 
 [sub_resource type="Animation" id="Animation_a3l2y"]
 length = 0.001
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_8em6v")]
+"values": [SubResource("CompressedTexture2D_wgdas")]
 }
 
 [sub_resource type="Animation" id="Animation_2co6o"]
@@ -64,8 +64,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_8em6v")]
+"values": [SubResource("CompressedTexture2D_wgdas")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i1xs1"]
+load_path = "res://.godot/imported/idle_animation.png-f060ab108e8ac7f9e5ca025b382e9079.ctex"
 
 [sub_resource type="Animation" id="Animation_nt02f"]
 resource_name = "idle"
@@ -91,8 +94,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_0vw6r")]
+"values": [SubResource("CompressedTexture2D_i1xs1")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hbc0i"]
+load_path = "res://.godot/imported/jump_animation.png-3a49c52a2e74bf82f4ff7d36c3a43355.ctex"
 
 [sub_resource type="Animation" id="Animation_rppns"]
 resource_name = "jump"
@@ -119,8 +125,11 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_x7ee2")]
+"values": [SubResource("CompressedTexture2D_hbc0i")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8em6v"]
+load_path = "res://.godot/imported/walking animation.png-60e0ed696c389fde4e1160ac8bbfa9c5.ctex"
 
 [sub_resource type="Animation" id="Animation_0vw6r"]
 resource_name = "run"
@@ -148,7 +157,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_13n82")]
+"values": [SubResource("CompressedTexture2D_8em6v")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a3l2y"]
@@ -173,7 +182,7 @@ shape = SubResource("CircleShape2D_ch5ey")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951811005]
 position = Vector2(7.6293945e-06, 3.8146973e-06)
 scale = Vector2(4, 4)
-texture = ExtResource("2_8em6v")
+texture = SubResource("CompressedTexture2D_wgdas")
 vframes = 2
 
 [node name="StateMachine" type="Node" parent="." unique_id=322809304 node_paths=PackedStringArray("initial_state")]
@@ -191,6 +200,9 @@ script = ExtResource("5_k12ae")
 
 [node name="Fall" type="Node" parent="StateMachine" unique_id=2055998501]
 script = ExtResource("7_0vw6r")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1954531617]
+script = ExtResource("8_x7ee2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1281104631]
 libraries/ = SubResource("AnimationLibrary_a3l2y")
