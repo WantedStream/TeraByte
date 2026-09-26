@@ -20,3 +20,8 @@ func die() -> void:
 	print("THE PLAYER HAS REACHED 0 HEALTH!")
 	TransitionManager.open_menu(TransitionManager.Menu.DEATH_SCREEN)
 	super() # Calls queue_free() from actor.gd
+func _unhandled_input(event: InputEvent) -> void:
+	# When the player presses the attack button
+	if event.is_action_pressed("attack"): 
+		# Command the state machine to switch to the Attack state immediately
+		state_machine.force_transition("Attack")

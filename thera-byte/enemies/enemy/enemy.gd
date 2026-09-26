@@ -2,12 +2,11 @@ class_name Enemy
 extends Actor
 
 @export var contact_damage: int = 1
-@onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	super() # Grabs the starting health from Actor
 
 # Universal logic: Every single enemy hurts the player on contact.
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.name == "CharacterBody2D":
-		EventBus.player_damaged.emit(contact_damage)
+	#if body.name == "CharacterBody2D":
+	EventBus.player_damaged.emit(contact_damage)

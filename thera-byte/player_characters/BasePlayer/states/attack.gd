@@ -1,11 +1,11 @@
-extends Node
+# Inside attack.gd (attached to the StateMachine in base_player.tscn)
+extends State
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func enter() -> void:
+	actor.velocity.x = 0
+	animator.play("attack")
+	print("attack state")
+	# The state lasts exactly as long as the animation takes to finish
+	await animator.animation_finished
+	print("idle state")
+	transition.emit(self, "Idle")

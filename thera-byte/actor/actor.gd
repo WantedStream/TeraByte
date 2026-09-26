@@ -7,6 +7,7 @@ const gravity: float = 980.0
 # --- Universal Stats ---
 @export var max_health: int = 3
 var current_health: int
+@onready var state_machine = $StateMachine
 
 func _ready() -> void:
 	current_health = max_health

@@ -15,5 +15,4 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
-	
-	pass # Replace with function body.
+		body.take_damage(1)

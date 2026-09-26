@@ -40,6 +40,9 @@ tracks/1/keys = {
 "values": [SubResource("CompressedTexture2D_wgdas")]
 }
 
+[sub_resource type="Animation" id="Animation_wgdas"]
+resource_name = "attack"
+
 [sub_resource type="Animation" id="Animation_2co6o"]
 resource_name = "fall"
 tracks/0/type = "value"
@@ -163,6 +166,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a3l2y"]
 _data = {
 &"RESET": SubResource("Animation_a3l2y"),
+&"attack": SubResource("Animation_wgdas"),
 &"fall": SubResource("Animation_2co6o"),
 &"idle": SubResource("Animation_nt02f"),
 &"jump": SubResource("Animation_rppns"),
@@ -171,6 +175,7 @@ _data = {
 
 [node name="BasePlayer" type="CharacterBody2D" unique_id=1185049311]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_8vvam")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=866195328]
