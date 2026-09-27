@@ -11,7 +11,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch5ey"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wgdas"]
-load_path = "res://.godot/imported/fall_animation.png-6ccf955377acbaa4d8469a1aa3865602.ctex"
 
 [sub_resource type="Animation" id="Animation_a3l2y"]
 length = 0.001
@@ -71,7 +70,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i1xs1"]
-load_path = "res://.godot/imported/idle_animation.png-f060ab108e8ac7f9e5ca025b382e9079.ctex"
 
 [sub_resource type="Animation" id="Animation_nt02f"]
 resource_name = "idle"
@@ -101,7 +99,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hbc0i"]
-load_path = "res://.godot/imported/jump_animation.png-3a49c52a2e74bf82f4ff7d36c3a43355.ctex"
 
 [sub_resource type="Animation" id="Animation_rppns"]
 resource_name = "jump"
@@ -132,7 +129,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8em6v"]
-load_path = "res://.godot/imported/walking animation.png-60e0ed696c389fde4e1160ac8bbfa9c5.ctex"
 
 [sub_resource type="Animation" id="Animation_0vw6r"]
 resource_name = "run"

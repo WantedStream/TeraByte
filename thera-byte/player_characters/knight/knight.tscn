@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl8ut5ndl6vtf"]
 
 [ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_ak4w8"]
-[ext_resource type="Texture2D" uid="uid://bdaa4gte1fhw5" path="res://player_characters/knight/knight_animation_texture.png" id="2_kacwe"]
+[ext_resource type="Texture2D" uid="uid://bdaa4gte1fhw5" path="res://player_characters/knight/knight_run_animation_texture.png" id="2_kacwe"]
 [ext_resource type="Script" uid="uid://bw7d6kxlblj6v" path="res://player_characters/knight/knight.gd" id="2_tlav8"]
 [ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_idle_animation_texture.png" id="4_4ocsp"]
 [ext_resource type="Texture2D" uid="uid://csqw8klvhmwll" path="res://player_characters/knight/knight_fall_animation_texture.png" id="4_7kafm"]
