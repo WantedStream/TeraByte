@@ -9,6 +9,9 @@ func physics_update(delta):
 		
 	# 2. Handle Movement
 	var direction = Input.get_vector("left", "right", "up", "down")
+	if direction.x != 0:
+		actor.face_direction(direction.x)
+		
 	actor.velocity.x = direction.x * actor.speed
 	
 	actor.move_and_slide()

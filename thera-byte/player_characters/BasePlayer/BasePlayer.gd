@@ -2,6 +2,7 @@ class_name BasePlayer
 
 extends Actor
 # No need to declare gravity or speed here anymore!
+@onready var sprite = $Sprite2D # Make sure this matches your Sprite node name
 
 func _ready() -> void:
 	print("The script is attached and alive!")
@@ -25,3 +26,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"): 
 		# Command the state machine to switch to the Attack state immediately
 		state_machine.force_transition("Attack")
+
+
+# This function flips the image based on input direction
+func face_direction(direction: float) -> void:
+	if direction > 0:
+		sprite.flip_h = false # Face right
+	elif direction < 0:
+		sprite.flip_h = true  # Face left
