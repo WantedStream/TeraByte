@@ -10,7 +10,8 @@ func physics_update(delta):
 	# Allow horizontal movement in the air
 	var direction = Input.get_vector("left", "right", "up", "down")
 	actor.velocity.x = direction.x * actor.speed
-	
+	if direction.x != 0:
+		actor.face_direction(direction.x)
 	actor.move_and_slide()
 	
 	# Once we start falling downward, switch to fall state
