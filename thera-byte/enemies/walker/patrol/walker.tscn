@@ -69,8 +69,12 @@ _data = {
 [node name="Walker" unique_id=800958931 instance=ExtResource("1_juuxd")]
 
 [node name="Sprite2D" parent="." index="1" unique_id=999899368]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_rscv4")
 vframes = 2
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_fwnb1")
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1093335884) index="0" unique_id=407098163]
+scale = Vector2(3, 3)

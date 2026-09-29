@@ -22,8 +22,20 @@ func take_damage(amount: int) -> void:
 	current_health -= amount
 	print(name, " took damage! Current health: ", current_health)
 	
+	flash_red()
+	
 	if current_health <= 0:
 		die()
+	
+func flash_red() -> void:
+	var sprite = $Sprite2D # Make sure this matches your Sprite2D node name
+	
+	# Instantly turn the sprite completely red
+	sprite.modulate = Color.RED
+	
+	# Create a Tween to smoothly fade it back to its normal color (White) over 1.0 second
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color.WHITE, 1.0)
 
 func die() -> void:
 	print(name, " has died.")

@@ -30,3 +30,10 @@ func face_direction(direction: float) -> void:
 		# Face Left: Force X position to be negative
 		melee_hitbox.position.x = -abs(melee_hitbox.position.x)
 		melee_hitbox.scale.x = -1
+
+
+func _on_melee_hitbox_area_entered(area: Area2D) -> void:
+	if area is Projectile:
+		area.queue_free()
+	print("area entered")
+	pass # Replace with function body.
