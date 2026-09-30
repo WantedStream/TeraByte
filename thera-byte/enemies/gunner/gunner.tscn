@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cvxkersuhg7tn" path="res://enemies/gunner/ranged_attack.gd" id="2_020o4"]
 [ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_chmo8"]
 [ext_resource type="Script" uid="uid://c8x7p5rhsg33m" path="res://enemies/gunner/gunner.gd" id="2_myxnl"]
+[ext_resource type="PackedScene" uid="uid://snpuxex3vqak" path="res://components/stompable_component.tscn" id="3_bkrky"]
 [ext_resource type="PackedScene" uid="uid://b47lek421p82v" path="res://projectiles/projectile.tscn" id="3_chmo8"]
 [ext_resource type="Texture2D" uid="uid://xwl7pp4hv1ek" path="res://enemies/gunner/gunner_ranged_attack_texture.png" id="4_syx7i"]
 
@@ -105,22 +106,25 @@ radius = 106.16968
 [node name="Gunner" unique_id=800958931 instance=ExtResource("1_ltqxl")]
 script = ExtResource("2_myxnl")
 
-[node name="ShooterComponent" parent="." index="0" unique_id=622750212 instance=ExtResource("2_chmo8")]
+[node name="StompableComponent" parent="." index="0" unique_id=889229351 instance=ExtResource("3_bkrky")]
+scale = Vector2(1, 5)
+
+[node name="ShooterComponent" parent="." index="1" unique_id=622750212 instance=ExtResource("2_chmo8")]
 projectile_scene = ExtResource("3_chmo8")
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=1493121032]
+[node name="CollisionShape2D" parent="." index="2" unique_id=1493121032]
 scale = Vector2(2, 2)
 
-[node name="Sprite2D" parent="." index="2" unique_id=999899368]
+[node name="Sprite2D" parent="." index="3" unique_id=999899368]
 scale = Vector2(2, 2)
 texture = ExtResource("4_syx7i")
 vframes = 2
 frame = 1
 
-[node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
+[node name="AnimationPlayer" parent="." index="4" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_vx48q")
 
-[node name="StateMachine" parent="." index="4" unique_id=983240821 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" parent="." index="5" unique_id=983240821 node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("Idle")
 
 [node name="Patrol" parent="StateMachine" index="0" unique_id=1937780281]
@@ -133,7 +137,7 @@ animation_name = "gunner_ranged_attack_animation"
 [node name="Idle" parent="StateMachine" index="2" unique_id=509644543]
 animation_name = "gunner_patrol_animation"
 
-[node name="DetectionZone" type="Area2D" parent="." index="6" unique_id=1741140205]
+[node name="DetectionZone" type="Area2D" parent="." index="7" unique_id=1741140205]
 collision_layer = 0
 collision_mask = 2
 

@@ -3,6 +3,7 @@ class_name BasePlayer
 extends Actor
 # No need to declare gravity or speed here anymore!
 @onready var sprite = $Sprite2D # Make sure this matches your Sprite node name
+const BOUNCE_VELOCITY = -400.0 # Adjust this to make the bounce higher/lower
 
 func _ready() -> void:
 	print("The script is attached and alive!")
@@ -17,6 +18,12 @@ func take_damage(amount: int) -> void:
 	# Then we update the UI, because only the Player has a UI
 	EventBus.health_changed.emit(current_health)	
 
+# Inside base_player.gd
+
+func bounce() -> void:
+	velocity.y = BOUNCE_VELOCITY
+	$StateMachine.force_transition("Jump")
+	
 func die() -> void:
 	print("THE PLAYER HAS REACHED 0 HEALTH!")
 	TransitionManager.open_menu(TransitionManager.Menu.DEATH_SCREEN)

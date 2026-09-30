@@ -12,6 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "CharacterBody2D":
 		EventBus.player_damaged.emit(damage_amount)
-	pass # Replace with function body.

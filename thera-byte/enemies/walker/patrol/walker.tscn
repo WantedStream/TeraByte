@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dl5apfp8qhcw3"]
 
 [ext_resource type="PackedScene" uid="uid://3i4e7cfataky" path="res://enemies/enemy/enemy.tscn" id="1_juuxd"]
+[ext_resource type="PackedScene" uid="uid://snpuxex3vqak" path="res://components/stompable_component.tscn" id="2_m2qfj"]
 [ext_resource type="Texture2D" uid="uid://bmlnv65n1320o" path="res://enemies/walker/patrol/walker_tiles.png" id="2_rscv4"]
 
 [sub_resource type="Animation" id="Animation_610kr"]
@@ -68,12 +69,18 @@ _data = {
 
 [node name="Walker" unique_id=800958931 instance=ExtResource("1_juuxd")]
 
-[node name="Sprite2D" parent="." index="1" unique_id=999899368]
+[node name="StompableComponent" parent="." index="0" unique_id=889229351 instance=ExtResource("2_m2qfj")]
+position = Vector2(0, -30)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1493121032]
+position = Vector2(0, 20)
+
+[node name="Sprite2D" parent="." index="2" unique_id=999899368]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_rscv4")
 vframes = 2
 
-[node name="AnimationPlayer" parent="." index="2" unique_id=416801033]
+[node name="AnimationPlayer" parent="." index="3" unique_id=416801033]
 libraries/ = SubResource("AnimationLibrary_fwnb1")
 
 [node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(1093335884) index="0" unique_id=407098163]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://snpuxex3vqak"]
+
+[ext_resource type="Script" uid="uid://pnq6ts43853x" path="res://components/stompable_component.gd" id="1_j4jpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfj6i"]
+size = Vector2(58, 8)
+
+[node name="StompableComponent" type="Area2D" unique_id=889229351]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_j4jpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2038775057]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_dfj6i")
