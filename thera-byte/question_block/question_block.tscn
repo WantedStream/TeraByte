@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://8hm7na0p1456"]
+
+[ext_resource type="Script" uid="uid://cph3s7nrxxhfg" path="res://question_block/question_block.gd" id="1_6gxj4"]
+[ext_resource type="Texture2D" uid="uid://dirnfx7ymafum" path="res://question_block/question_block_texture.png" id="1_473dh"]
+[ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="2_qkhcm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(62, 6)
+
+[node name="QuestionBlock" type="StaticBody2D" unique_id=458163600]
+script = ExtResource("1_6gxj4")
+item_scene = ExtResource("2_qkhcm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736491000]
+texture = ExtResource("1_473dh")
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159003187]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="BottomSensor" type="Area2D" parent="." unique_id=971247002]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomSensor" unique_id=887747254]
+position = Vector2(1, 32)
+shape = SubResource("RectangleShape2D_yf5fn")
