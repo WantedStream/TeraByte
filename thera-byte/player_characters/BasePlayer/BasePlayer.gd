@@ -36,8 +36,21 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 # This function flips the image based on input direction
-func face_direction(direction: float) -> void:
-	if direction > 0:
-		sprite.flip_h = false # Face right
-	elif direction < 0:
-		sprite.flip_h = true  # Face left
+func face_direction(direction_x: float) -> void:
+	# Don't change facing direction if we are standing still
+	if direction_x == 0:
+		return
+		
+	# Assuming your original sprite artwork faces RIGHT by default.
+	# (If your artwork faces left by default, change this to direction_x > 0)
+	var is_facing_left = direction_x < 0 
+	
+	# Safely flip the standard Sprite2D if it exists
+	var standard_sprite = get_node_or_null("Sprite2D")
+	if standard_sprite:
+		standard_sprite.flip_h = is_facing_left
+		
+	# Safely flip the AnimatedSprite2D if it exists
+	var animated_sprite = get_node_or_null("AnimatedSprite2D")
+	if animated_sprite:
+		animated_sprite.flip_h = is_facing_left

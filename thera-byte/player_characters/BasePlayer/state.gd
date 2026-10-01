@@ -4,7 +4,7 @@ class_name State
 signal transition(state, new_state_name)
 
 var actor: Actor # Changed from player
-var animator: AnimationPlayer
+var animator: Node
 
 func enter():
 	pass

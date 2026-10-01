@@ -6,6 +6,67 @@
 [ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_idle_animation_texture.png" id="4_4ocsp"]
 [ext_resource type="Texture2D" uid="uid://csqw8klvhmwll" path="res://player_characters/knight/knight_fall_animation_texture.png" id="4_7kafm"]
 [ext_resource type="Texture2D" uid="uid://cr77c4upkyyx1" path="res://player_characters/knight/knight_jump_animation_texture.png" id="5_fdqn4"]
+[ext_resource type="Texture2D" uid="uid://3cymh76b68nw" path="res://player_characters/knight/knight_attack_animation_frame_1_texture.png" id="7_ua886"]
+[ext_resource type="Texture2D" uid="uid://ba82agkoht376" path="res://player_characters/knight/knight_attack_animation_frame_2_texture.png" id="8_3qnti"]
+[ext_resource type="Texture2D" uid="uid://b3op6hon7rh86" path="res://player_characters/knight/knight_run_animation_frame_2_texture.png" id="9_x8xmb"]
+[ext_resource type="Texture2D" uid="uid://bkqqpla7sps5c" path="res://player_characters/knight/knight_run_animation_frame_1_texture.png" id="10_bdi5a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgdas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ua886")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3qnti")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7kafm")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4ocsp")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fdqn4")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bdi5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x8xmb")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(122.75, 80)
 
 [sub_resource type="Animation" id="Animation_ak4w8"]
 length = 0.8
@@ -293,19 +354,22 @@ _data = {
 &"run": SubResource("Animation_l0yqv")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(122.75, 80)
-
 [node name="Knight" unique_id=1185049311 instance=ExtResource("1_ak4w8")]
 script = ExtResource("2_tlav8")
 
-[node name="Sprite2D" parent="." index="2" unique_id=951811005]
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
+position = Vector2(7, -2)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wgdas")
+animation = &"attack"
+
+[node name="Sprite2D" parent="." index="3" unique_id=951811005]
 position = Vector2(5.499997, -9.999996)
 scale = Vector2(1.7968751, 1.8125001)
 texture = ExtResource("2_kacwe")
 
-[node name="AnimationPlayer" parent="." index="4" unique_id=1281104631]
-libraries/ = SubResource("AnimationLibrary_s2574")
+[node name="StateMachine" parent="." index="4" unique_id=322809304]
+use_animated_sprite = true
 
 [node name="MeleeHitbox" type="Area2D" parent="." index="5" unique_id=226109183]
 collision_layer = 0
@@ -315,6 +379,9 @@ collision_mask = 12
 position = Vector2(116, -1)
 shape = SubResource("RectangleShape2D_g4v7s")
 disabled = true
+
+[node name="AnimationPlayer" parent="." index="6" unique_id=1281104631]
+libraries/ = SubResource("AnimationLibrary_s2574")
 
 [connection signal="area_entered" from="MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="body_entered" from="MeleeHitbox" to="." method="_on_melee_hitbox_body_entered"]
