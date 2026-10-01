@@ -28,8 +28,16 @@ func take_damage(amount: int) -> void:
 		die()
 	
 func flash_red() -> void:
-	var sprite = $Sprite2D # Make sure this matches your Sprite2D node name
+	# 1. Safely check for the AnimatedSprite2D first
+	var sprite = get_node_or_null("AnimatedSprite2D")
 	
+	# 2. If it is null (doesn't exist), assign the standard Sprite2D instead
+	if sprite == null:
+		sprite = get_node_or_null("Sprite2D")
+		
+	# 3. Safety check: If BOTH are missing, exit the function so the game doesn't crash
+	if sprite == null:
+		return
 	# Instantly turn the sprite completely red
 	sprite.modulate = Color.RED
 	

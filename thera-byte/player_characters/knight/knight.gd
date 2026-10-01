@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	#apply_gravity(delta)
 	
 	#move_and_slide()
+	
 	pass
 
 func _on_melee_hitbox_body_entered(body: Node2D) -> void:
