@@ -69,6 +69,8 @@ size = Vector2(122.75, 80)
 
 [node name="Knight" unique_id=1185049311 instance=ExtResource("1_ak4w8")]
 script = ExtResource("2_tlav8")
+jump_velocity = -600.0
+speed = 600.0
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
 position = Vector2(7, -2)

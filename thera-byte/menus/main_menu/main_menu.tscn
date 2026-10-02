@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e3pwxd34cvvi"]
 
 [ext_resource type="Script" uid="uid://5dey5lkss0rt" path="res://menus/main_menu/main_menu.gd" id="1_1nwmw"]
+[ext_resource type="Texture2D" uid="uid://dfpoflux3mxw5" path="res://menus/main_menu/main_menu_background.png" id="2_1nwmw"]
 
 [sub_resource type="GDScript" id="GDScript_xbn2l"]
 script/source = "extends Button
@@ -32,25 +33,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1nwmw")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1854181901]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1nwmw")
+
+[node name="Label" type="Label" parent="." unique_id=1985028330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -224.0
+offset_right = 340.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.08627451, 0.78431374, 0.2627451, 1)
+theme_override_font_sizes/font_size = 100
+text = "Thera-Byte"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PlayButton" type="Button" parent="." unique_id=1078748410]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.036000002
 anchor_bottom = 0.048
-offset_left = 383.0
-offset_top = 232.0
-offset_right = 727.528
-offset_bottom = 386.896
+offset_left = 388.0
+offset_top = 306.0
+offset_right = 732.528
+offset_bottom = 460.896
 theme_override_font_sizes/font_size = 60
 text = "Play"
 script = SubResource("GDScript_xbn2l")
 
 [node name="CharacterSelectorButton" type="Button" parent="." unique_id=1340642468]
 layout_mode = 0
-offset_left = 483.0
-offset_top = 454.0
-offset_right = 693.0
-offset_bottom = 572.0
+offset_left = 477.0
+offset_top = 494.0
+offset_right = 687.0
+offset_bottom = 612.0
 text = "character selection"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cekw0andrf2t4" path="res://levels/level_1/level_1.gd" id="1_fi65l"]
 [ext_resource type="PackedScene" uid="uid://ch4vnsqjhavrr" path="res://hud/hud.tscn" id="2_1dqib"]
+[ext_resource type="PackedScene" uid="uid://ccp6ob62yi6sk" path="res://background/parallax_2d.tscn" id="2_la5aw"]
 [ext_resource type="PackedScene" uid="uid://cmcn1sm7v5lmy" path="res://hazard/hazard.tscn" id="4_g0pf7"]
 [ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="5_wbmc6"]
 [ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="6_klepv"]
@@ -12,6 +13,11 @@
 
 [node name="MainLevel" type="Node2D" unique_id=1682213557]
 script = ExtResource("1_fi65l")
+
+[node name="Parallax2D" parent="." unique_id=1035909389 instance=ExtResource("2_la5aw")]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(640, 0)
+repeat_times = 20
 
 [node name="HUD" parent="." unique_id=64284090 instance=ExtResource("2_1dqib")]
 
