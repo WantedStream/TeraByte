@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cv17rrriju4eu"]
+
+[ext_resource type="PackedScene" uid="uid://ccp6ob62yi6sk" path="res://background/parallax_2d.tscn" id="1_6duh4"]
+[ext_resource type="Script" uid="uid://db72xbt7qs2lk" path="res://levels/BaseLevel/base_level.gd" id="1_tk11u"]
+[ext_resource type="PackedScene" uid="uid://ch4vnsqjhavrr" path="res://hud/hud.tscn" id="2_tk11u"]
+[ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="5_ajt7j"]
+[ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="10_iu6wr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv2yn"]
+resource_local_to_scene = true
+size = Vector2(10000, 20)
+
+[node name="BaseLevel" type="Node2D" unique_id=790450046]
+script = ExtResource("1_tk11u")
+
+[node name="Parallax2D" parent="." unique_id=1031764885 instance=ExtResource("1_6duh4")]
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(-25, 11)
+repeat_size = Vector2(640, 0)
+repeat_times = 20
+
+[node name="HUD" parent="." unique_id=64284090 instance=ExtResource("2_tk11u")]
+
+[node name="TileMapLayer" parent="." unique_id=1882126655 instance=ExtResource("5_ajt7j")]
+tile_map_data = PackedByteArray()
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=1829596054]
+position = Vector2(-430, 96)
+
+[node name="DeathBarrier" parent="." unique_id=1896400656 instance=ExtResource("10_iu6wr")]
+position = Vector2(-287, 176)
+
+[node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
+position = Vector2(-758, 201)
+shape = SubResource("RectangleShape2D_nv2yn")
+
+[editable path="DeathBarrier"]
