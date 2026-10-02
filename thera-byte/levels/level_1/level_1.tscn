@@ -10,12 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://dl5apfp8qhcw3" path="res://enemies/walker/patrol/walker.tscn" id="8_j48du"]
 [ext_resource type="PackedScene" uid="uid://dj28vscq7tf6i" path="res://enemies/gunner/gunner.tscn" id="9_8jbay"]
 [ext_resource type="PackedScene" uid="uid://8hm7na0p1456" path="res://question_block/question_block.tscn" id="9_la5aw"]
+[ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="11_qbdb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdb0"]
+resource_local_to_scene = true
+size = Vector2(10000, 20)
 
 [node name="MainLevel" type="Node2D" unique_id=1682213557]
 script = ExtResource("1_fi65l")
 
 [node name="Parallax2D" parent="." unique_id=1035909389 instance=ExtResource("2_la5aw")]
 scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(-25, 11)
 repeat_size = Vector2(640, 0)
 repeat_times = 20
 
@@ -51,3 +57,12 @@ position = Vector2(-430, 96)
 
 [node name="QuestionBlock" parent="." unique_id=458163600 instance=ExtResource("9_la5aw")]
 position = Vector2(-555, 36)
+
+[node name="DeathBarrier" parent="." unique_id=1896400656 instance=ExtResource("11_qbdb0")]
+position = Vector2(-287, 176)
+
+[node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
+position = Vector2(-758, 201)
+shape = SubResource("RectangleShape2D_qbdb0")
+
+[editable path="DeathBarrier"]
