@@ -14,6 +14,15 @@ grow_vertical = 2
 script = ExtResource("1_fqef4")
 knight_scene = ExtResource("2_3i8fi")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=671345346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25882354, 0.49411765, 0.7137255, 1)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1916295091]
 layout_mode = 0
 offset_right = 1154.0
@@ -27,7 +36,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/KnightSelection" unique_id=89571131]
 layout_mode = 2
-text = "knight"
+text = "Knight"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/KnightSelection" unique_id=1125061915]
@@ -48,7 +57,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="HBoxContainer/ArcherSelection" unique_id=997073820]
 layout_mode = 2
-text = "archer"
+text = "Archer"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/ArcherSelection" unique_id=1697533931]

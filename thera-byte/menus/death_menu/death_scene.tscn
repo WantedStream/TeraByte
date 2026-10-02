@@ -11,12 +11,22 @@ offset_right = 1148.0
 offset_bottom = 642.0
 script = ExtResource("1_po3gv")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1397609402]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1552817, 0.028292155, 0, 1)
+
 [node name="YouDiedLabelel" type="Label" parent="." unique_id=815201592]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 263.0
-offset_right = 775.0
-offset_bottom = 447.0
+offset_left = 437.0
+offset_top = 264.0
+offset_right = 780.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(0.6361775, 0.089014225, 0.13074195, 1)
 theme_override_font_sizes/font_size = 64
 text = "you died"
 

@@ -9,6 +9,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_b82s5")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1812107130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1098.0
+offset_bottom = 593.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25882354, 0.49411765, 0.7137255, 1)
+
 [node name="Title" type="Label" parent="." unique_id=1752210006]
 layout_mode = 0
 offset_left = 310.0
