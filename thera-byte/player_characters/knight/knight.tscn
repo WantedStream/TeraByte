@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ba82agkoht376" path="res://player_characters/knight/knight_attack_animation_frame_2_texture.png" id="8_3qnti"]
 [ext_resource type="Texture2D" uid="uid://b3op6hon7rh86" path="res://player_characters/knight/knight_run_animation_frame_2_texture.png" id="9_x8xmb"]
 [ext_resource type="Texture2D" uid="uid://bkqqpla7sps5c" path="res://player_characters/knight/knight_run_animation_frame_1_texture.png" id="10_bdi5a"]
+[ext_resource type="Script" uid="uid://cm8qh4a2v67v7" path="res://player_characters/knight/knight_attack.gd" id="10_ua886"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wgdas"]
 animations = [{
@@ -83,6 +84,9 @@ position = Vector2(5.499997, -9.999996)
 scale = Vector2(1.7968751, 1.8125001)
 texture = ExtResource("4_7kafm")
 vframes = 1
+
+[node name="Attack" parent="StateMachine" parent_id_path=PackedInt32Array(322809304) index="4" unique_id=1954531617]
+script = ExtResource("10_ua886")
 
 [node name="MeleeHitbox" type="Area2D" parent="." index="5" unique_id=226109183]
 collision_layer = 0
