@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0ebrjcvvpte3"]
+
+[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_qfuxy"]
+[ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_7csyj"]
+[ext_resource type="PackedScene" uid="uid://b47lek421p82v" path="res://projectiles/projectile.tscn" id="3_jjlrg"]
+
+[node name="Archer" unique_id=1185049311 instance=ExtResource("1_qfuxy")]
+
+[node name="ShooterComponent" parent="." index="1" unique_id=622750212 instance=ExtResource("2_7csyj")]
+projectile_scene = ExtResource("3_jjlrg")
