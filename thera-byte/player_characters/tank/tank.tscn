@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bcmx21oco52cq"]
+
+[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_o8rbs"]
+[ext_resource type="Script" uid="uid://bxgm5lh7e2le1" path="res://player_characters/tank/tank_attack.gd" id="2_e61tl"]
+[ext_resource type="Script" uid="uid://dq71yojk81a2j" path="res://player_characters/tank/tank.gd" id="2_tv7w3"]
+[ext_resource type="Texture2D" uid="uid://cgls85jpbw8a" path="res://player_characters/tank/tank_attack_frame_1_texture.png" id="2_vs3d4"]
+[ext_resource type="Texture2D" uid="uid://cwcxmabtli1p0" path="res://player_characters/tank/tank_attack_frame_2_texture.png" id="3_tv7w3"]
+[ext_resource type="Texture2D" uid="uid://ejbh5jnq6g8w" path="res://player_characters/tank/tank_attack_frame_3_texture.png" id="4_2sxu8"]
+[ext_resource type="Texture2D" uid="uid://8hp0544hg43h" path="res://player_characters/tank/tank_attack_frame_4_texture.png" id="5_15g81"]
+[ext_resource type="Texture2D" uid="uid://d0isys5ngryhe" path="res://player_characters/tank/tank_attack_frame_5_texture.png" id="6_f25eh"]
+[ext_resource type="Texture2D" uid="uid://jo7lpxl176kt" path="res://player_characters/tank/tank_attack_frame_6_texture.png" id="7_e3bkc"]
+[ext_resource type="Texture2D" uid="uid://bl2k6fxuh3blc" path="res://player_characters/tank/tank_fall_texture.png" id="8_1pay8"]
+[ext_resource type="Texture2D" uid="uid://doyobdw24ngsn" path="res://player_characters/tank/tank_idle_texture.png" id="9_n4qdk"]
+[ext_resource type="Texture2D" uid="uid://4m873p7kq5ow" path="res://player_characters/tank/tank_jump_texture.png" id="10_vdlwe"]
+[ext_resource type="Texture2D" uid="uid://bo1purhfgexat" path="res://player_characters/tank/tank_run__frame_1_texture.png" id="11_0s6fa"]
+[ext_resource type="Texture2D" uid="uid://djd4tdwngq7tt" path="res://player_characters/tank/tank_run__frame_2_texture.png" id="12_v5ulx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e61tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vs3d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tv7w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2sxu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_15g81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f25eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e3bkc")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1pay8")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_n4qdk")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vdlwe")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0s6fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v5ulx")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xagy3"]
+size = Vector2(209, 186)
+
+[node name="Tank" unique_id=1185049311 instance=ExtResource("1_o8rbs")]
+script = ExtResource("2_tv7w3")
+jump_velocity = -400.0
+speed = 400.0
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
+position = Vector2(1.5, 5.500001)
+scale = Vector2(1.859375, 1.703125)
+sprite_frames = SubResource("SpriteFrames_e61tl")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+
+[node name="Attack" parent="StateMachine" parent_id_path=PackedInt32Array(322809304) index="4" unique_id=1954531617]
+script = ExtResource("2_e61tl")
+charge_speed = 600.0
+
+[node name="MeleeHitbox" type="Area2D" parent="." index="5" unique_id=959423996]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" index="0" unique_id=1934167080]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_xagy3")
+
+[connection signal="body_entered" from="MeleeHitbox" to="." method="_on_melee_hitbox_body_entered"]

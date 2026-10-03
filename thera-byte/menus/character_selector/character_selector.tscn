@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_idle_animation_texture.png" id="2_7ditl"]
 [ext_resource type="PackedScene" uid="uid://c0ebrjcvvpte3" path="res://player_characters/archer/archer.tscn" id="3_i0k6u"]
 [ext_resource type="PackedScene" uid="uid://d38yo7q53ntfo" path="res://player_characters/magician/magician.tscn" id="4_va2gp"]
+[ext_resource type="PackedScene" uid="uid://bcmx21oco52cq" path="res://player_characters/tank/tank.tscn" id="5_7hxix"]
 [ext_resource type="Texture2D" uid="uid://b73dkjxqsx3bo" path="res://player_characters/archer/archer_idle_texture.piskel.png" id="5_gskyx"]
+[ext_resource type="Texture2D" uid="uid://doyobdw24ngsn" path="res://player_characters/tank/tank_idle_texture.png" id="9_lx7ko"]
 [ext_resource type="Texture2D" uid="uid://5uqgwysy5bot" path="res://player_characters/magician/magician_idle_texture.png" id="11_ypebc"]
 
 [node name="CharacterSelector" type="Control" unique_id=2006253872]
@@ -19,6 +21,7 @@ script = ExtResource("1_fqef4")
 knight_scene = ExtResource("2_3i8fi")
 archer_scene = ExtResource("3_i0k6u")
 magician_scene = ExtResource("4_va2gp")
+tank_scene = ExtResource("5_7hxix")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=671345346]
 layout_mode = 1
@@ -110,7 +113,7 @@ horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/TankSelection" unique_id=1449839401]
 layout_mode = 2
-texture = ExtResource("2_7ditl")
+texture = ExtResource("9_lx7ko")
 expand_mode = 4
 stretch_mode = 3
 
