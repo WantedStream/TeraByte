@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://df4gq2nvwvjym"]
+
+[ext_resource type="Script" uid="uid://biy10yumlmrx2" path="res://projectiles/fireball/fireball.gd" id="1_yj2v0"]
+[ext_resource type="Texture2D" uid="uid://k7o8yk6lxh3c" path="res://projectiles/fireball/fireball_texture.png" id="2_yj2v0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 350.0
+
+[node name="Fireball" type="Area2D" unique_id=159182320]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_yj2v0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009536104]
+texture = ExtResource("2_yj2v0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584843393]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1246376115]
+
+[node name="RadarZone" type="Area2D" parent="." unique_id=520072878]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarZone" unique_id=641767662]
+shape = SubResource("CircleShape2D_yf5fn")
