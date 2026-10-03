@@ -76,7 +76,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1493121032]
 position = Vector2(0, 1)
-scale = Vector2(3, 3)
+scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" parent="." index="2" unique_id=999899368]
 scale = Vector2(1.5, 1.5)
