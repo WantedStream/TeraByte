@@ -71,6 +71,7 @@ _data = {
 
 [node name="StompableComponent" parent="." index="0" unique_id=889229351 instance=ExtResource("2_m2qfj")]
 position = Vector2(0, -30)
+collision_layer = 4
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1493121032]
 position = Vector2(0, 20)
