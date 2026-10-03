@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://demo4gikgn3bi" path="res://player_characters/archer/archer_attack_frame_4_texture.png" id="5_47x0v"]
 [ext_resource type="Texture2D" uid="uid://bea0r0x2sjqdd" path="res://player_characters/archer/archer_run_frame_1_texture.png" id="5_chgpx"]
 [ext_resource type="Texture2D" uid="uid://n0gvxle088g8" path="res://player_characters/archer/archer_run_frame_2_texture.png" id="6_14ael"]
+[ext_resource type="Script" uid="uid://c53x5fcx2ct46" path="res://player_characters/archer/archer_attack.gd" id="13_rkr5r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gskyx"]
 animations = [{
@@ -73,43 +74,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_14ael"]
-script/source = "extends BaseAttackState
-
-@export var component_name: String = \"ShooterComponent\"
-var shooter_component: Node
-
-func enter() -> void:
-	# Grab the ShooterComponent from the Archer's tree
-	shooter_component = actor.get_node_or_null(component_name)
-	
-	# Call super() to run the animation and movement lock from base_attack.gd
-	super() 
-
-# Overwrite the empty execute_attack function from base_attack.gd
-func execute_attack() -> void:
-	if not shooter_component:
-		return
-		
-	# 1. Determine which way the Archer is facing
-	var sprite = actor.get_node_or_null(\"AnimatedSprite2D\")
-	if not sprite:
-		sprite = actor.get_node_or_null(\"Sprite2D\")
-		
-	var shoot_direction = Vector2.RIGHT
-	if sprite and sprite.flip_h:
-		shoot_direction = Vector2.LEFT
-		
-	# 2. Move the spawn point to the correct side of the player
-	var spawn_point = shooter_component.get_node_or_null(\"Marker2D\")
-	if spawn_point:
-		spawn_point.position.x = abs(spawn_point.position.x) * shoot_direction.x
-		
-	# 3. Pull the trigger on the ShooterComponent
-	if shooter_component.has_method(\"execute_action\"):
-		shooter_component.execute_action(shoot_direction)
-"
-
 [node name="Archer" unique_id=1185049311 instance=ExtResource("1_qfuxy")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
@@ -122,5 +86,5 @@ animation = &"attack"
 projectile_scene = ExtResource("3_7csyj")
 
 [node name="Attack" parent="StateMachine" parent_id_path=PackedInt32Array(322809304) index="4" unique_id=1954531617]
-script = SubResource("GDScript_14ael")
+script = ExtResource("13_rkr5r")
 component_name = "ShooterComponent"

@@ -9,8 +9,7 @@ func enter() -> void:
 	
 	# Call super() to run the animation and movement lock from base_attack.gd
 	super() 
-	
-	print("attack state enterted")
+
 # Overwrite the empty execute_attack function from base_attack.gd
 func execute_attack() -> void:
 	if not shooter_component:

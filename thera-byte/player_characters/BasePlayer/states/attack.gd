@@ -16,6 +16,7 @@ func enter() -> void:
 	# 4. Wait for the animation to finish
 	await animator.animation_finished
 	transition.emit(self, "Idle")
+	
 
 func exit() -> void:
 	# Clean up the signal
@@ -27,6 +28,7 @@ func _on_frame_changed() -> void:
 	# Frame 1 is the action frame (sword swing or arrow release)
 	if animator.frame == 1:
 		execute_attack()
+		print("executed attack")
 
 # This is a "virtual" function. The base player does nothing here,
 # but the Knight and Archer will overwrite it with their own logic!

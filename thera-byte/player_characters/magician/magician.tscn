@@ -1,5 +1,93 @@
-[gd_scene format=3 uid="uid://ck7f5613mwbq2"]
+[gd_scene format=3 uid="uid://d38yo7q53ntfo"]
 
-[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_xv222"]
+[ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_poi2t"]
+[ext_resource type="Texture2D" uid="uid://vvgfj848f2o0" path="res://player_characters/magician/magician_attack_frame_1_texture.png" id="2_rkpcf"]
+[ext_resource type="Texture2D" uid="uid://ciofbpbkjgmyn" path="res://player_characters/magician/magician_attack_frame_2_texture.png" id="3_sem13"]
+[ext_resource type="Texture2D" uid="uid://b4q1af8cyiipq" path="res://player_characters/magician/magician_attack_frame_3_texture.png" id="4_bgn60"]
+[ext_resource type="Texture2D" uid="uid://dka4srpoe5xk1" path="res://player_characters/magician/magician_attack_frame_4_texture.png" id="5_1hpa6"]
+[ext_resource type="Texture2D" uid="uid://yvlcydqvqpnq" path="res://player_characters/magician/magician_attack_frame_5_texture.png" id="6_lyplv"]
+[ext_resource type="Texture2D" uid="uid://be86ov38eydhw" path="res://player_characters/magician/magician_fall_texture.png" id="7_vb0af"]
+[ext_resource type="Texture2D" uid="uid://5uqgwysy5bot" path="res://player_characters/magician/magician_idle_texture.png" id="8_l7pst"]
+[ext_resource type="Texture2D" uid="uid://btcy1fbbsop0c" path="res://player_characters/magician/magician_jump_texture.png" id="9_7k2vb"]
+[ext_resource type="Texture2D" uid="uid://bm0gmjfamormd" path="res://player_characters/magician/magician_run_frame_1_texture.png" id="10_wacvx"]
+[ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="11_c4cyv"]
+[ext_resource type="Texture2D" uid="uid://urnh3sam3jaa" path="res://player_characters/magician/magician_run_frame_2_texture.png" id="11_wpqrk"]
+[ext_resource type="PackedScene" uid="uid://df4gq2nvwvjym" path="res://projectiles/fireball/fireball.tscn" id="12_poi2t"]
+[ext_resource type="Script" uid="uid://chlvgnt3pq7kg" path="res://player_characters/magician/magician_attack.gd" id="14_c8rso"]
 
-[node name="Magician" unique_id=1185049311 instance=ExtResource("1_xv222")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldxf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rkpcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sem13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bgn60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1hpa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyplv")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_vb0af")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l7pst")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_7k2vb")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_wacvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wpqrk")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Magician" unique_id=1185049311 instance=ExtResource("1_poi2t")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
+position = Vector2(-1.9073486e-06, -1)
+scale = Vector2(2, 1.901)
+sprite_frames = SubResource("SpriteFrames_ldxf7")
+animation = &"run"
+
+[node name="ShooterComponent" parent="." index="1" unique_id=622750212 instance=ExtResource("11_c4cyv")]
+projectile_scene = ExtResource("12_poi2t")
+
+[node name="Attack" parent="StateMachine" parent_id_path=PackedInt32Array(322809304) index="4" unique_id=1954531617]
+script = ExtResource("14_c8rso")
