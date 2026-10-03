@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ct6c7gj2173sl" path="res://character_selector.gd" id="1_fqef4"]
 [ext_resource type="PackedScene" uid="uid://cl8ut5ndl6vtf" path="res://player_characters/knight/knight.tscn" id="2_3i8fi"]
 [ext_resource type="Texture2D" uid="uid://5x7stkb4wwl3" path="res://player_characters/knight/knight_idle_animation_texture.png" id="2_7ditl"]
+[ext_resource type="PackedScene" uid="uid://c0ebrjcvvpte3" path="res://player_characters/archer/archer.tscn" id="3_i0k6u"]
 
 [node name="CharacterSelector" type="Control" unique_id=2006253872]
 layout_mode = 3
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fqef4")
 knight_scene = ExtResource("2_3i8fi")
+archer_scene = ExtResource("3_i0k6u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=671345346]
 layout_mode = 1

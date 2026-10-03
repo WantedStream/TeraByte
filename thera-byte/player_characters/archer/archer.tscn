@@ -2,9 +2,63 @@
 
 [ext_resource type="PackedScene" uid="uid://41rugr6lt41b" path="res://player_characters/BasePlayer/base_player.tscn" id="1_qfuxy"]
 [ext_resource type="PackedScene" uid="uid://byuq48tnsbj0p" path="res://components/shooter_component.tscn" id="2_7csyj"]
-[ext_resource type="PackedScene" uid="uid://b47lek421p82v" path="res://projectiles/projectile.tscn" id="3_jjlrg"]
+[ext_resource type="Texture2D" uid="uid://b2uko5a7lrq8y" path="res://player_characters/archer/archer_fall_texture.png" id="2_fb8f1"]
+[ext_resource type="PackedScene" uid="uid://ckga1j6pq25yy" path="res://projectiles/arrow/arrow.tscn" id="3_7csyj"]
+[ext_resource type="Texture2D" uid="uid://b73dkjxqsx3bo" path="res://player_characters/archer/archer_idle_texture.piskel.png" id="3_qqmsg"]
+[ext_resource type="Texture2D" uid="uid://cgdiea8ljin7f" path="res://player_characters/archer/archer_jump_texture.png" id="4_0qriv"]
+[ext_resource type="Texture2D" uid="uid://bea0r0x2sjqdd" path="res://player_characters/archer/archer_run_frame_1_texture.png" id="5_chgpx"]
+[ext_resource type="Texture2D" uid="uid://n0gvxle088g8" path="res://player_characters/archer/archer_run_frame_2_texture.png" id="6_14ael"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gskyx"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fb8f1")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qqmsg")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0qriv")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_chgpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_14ael")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Archer" unique_id=1185049311 instance=ExtResource("1_qfuxy")]
 
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1860506818]
+position = Vector2(0, -3.8146973e-06)
+scale = Vector2(1.84375, 1.515625)
+sprite_frames = SubResource("SpriteFrames_gskyx")
+animation = &"fall"
+
 [node name="ShooterComponent" parent="." index="1" unique_id=622750212 instance=ExtResource("2_7csyj")]
-projectile_scene = ExtResource("3_jjlrg")
+projectile_scene = ExtResource("3_7csyj")

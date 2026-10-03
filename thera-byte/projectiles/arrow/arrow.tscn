@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckga1j6pq25yy"]
+
+[ext_resource type="Script" uid="uid://c8tq77a1rbaqc" path="res://projectiles/bullet/bullet.gd" id="1_enxc1"]
+[ext_resource type="Texture2D" uid="uid://dpk2ra11gxnyw" path="res://projectiles/arrow/arrow_texture.png" id="2_ivdpe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Projectile" type="Area2D" unique_id=159182320]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_enxc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009536104]
+texture = ExtResource("2_ivdpe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584843393]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1246376115]

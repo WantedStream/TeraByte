@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbfhp01htf87i"
-path="res://.godot/imported/bullet_texture.png-d10893210c303b6a926d14952d401e02.ctex"
+uid="uid://dpk2ra11gxnyw"
+path="res://.godot/imported/arrow_texture.png-2fc99736cf45fb21910597c425d558c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://projectiles/bullet_texture.png"
-dest_files=["res://.godot/imported/bullet_texture.png-d10893210c303b6a926d14952d401e02.ctex"]
+source_file="res://projectiles/arrow/arrow_texture.png"
+dest_files=["res://.godot/imported/arrow_texture.png-2fc99736cf45fb21910597c425d558c3.ctex"]
 
 [params]
 
