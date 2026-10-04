@@ -1,6 +1,24 @@
 [gd_scene format=4 uid="uid://f7odr0r3u1mi"]
 
 [ext_resource type="Texture2D" uid="uid://br553j0bi5ns4" path="res://block/block.png" id="1_dbqtv"]
+[ext_resource type="Texture2D" uid="uid://mtlg6mw67fp8" path="res://blocks/terrain/grass/grass_texture.png" id="1_qg3f0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tavg1"]
+texture = ExtResource("1_qg3f0")
+texture_region_size = Vector2i(64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbqtv"]
 texture = ExtResource("1_dbqtv")
@@ -12,6 +30,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_dbqtv")
+sources/0 = SubResource("TileSetAtlasSource_tavg1")
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1882126655]
 tile_map_data = PackedByteArray("AAD8/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAAEAAEAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAA=")
