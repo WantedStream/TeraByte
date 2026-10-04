@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dbwcekk72aiy5"]
+
+[ext_resource type="Script" uid="uid://btfg83i1bhj00" path="res://blocks/props/WorldButton/world_button.gd" id="1_kkss5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[node name="WorldButton" type="Area2D" unique_id=309898748]
+script = ExtResource("1_kkss5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1034634358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1756195288]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=243700658]
