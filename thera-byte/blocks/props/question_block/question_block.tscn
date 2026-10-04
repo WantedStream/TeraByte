@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8hm7na0p1456"]
 
-[ext_resource type="Script" uid="uid://cph3s7nrxxhfg" path="res://question_block/question_block.gd" id="1_6gxj4"]
-[ext_resource type="Texture2D" uid="uid://dirnfx7ymafum" path="res://question_block/question_block_texture.png" id="1_473dh"]
+[ext_resource type="Script" uid="uid://cph3s7nrxxhfg" path="res://blocks/props/question_block/question_block.gd" id="1_6gxj4"]
+[ext_resource type="Texture2D" uid="uid://dirnfx7ymafum" path="res://blocks/props/question_block/question_block_texture.png" id="1_473dh"]
 [ext_resource type="PackedScene" uid="uid://gs8sdbn1uv0o" path="res://coin/coin.tscn" id="2_qkhcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
