@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 signal button_toggled(is_active: bool)
 
@@ -7,18 +7,18 @@ enum ButtonBehavior { MOMENTARY, TOGGLE, ONE_SHOT }
 
 var is_pressed: bool = false
 
-# Grab reference to the new AnimatedSprite2D node
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var trigger_area: Area2D = $TriggerArea
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	trigger_area.body_entered.connect(_on_body_entered)
+	trigger_area.body_exited.connect(_on_body_exited)
 	
 	update_visuals()
 
 func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("player"): 
+	if not body is BasePlayer:
 		return
 		
 	if behavior == ButtonBehavior.ONE_SHOT and is_pressed:
@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 	execute_press()
 
 func _on_body_exited(body: Node2D) -> void:
-	if not body.is_in_group("player"): 
+	if not body is BasePlayer:
 		return
 		
 	if behavior == ButtonBehavior.MOMENTARY:
@@ -42,6 +42,7 @@ func _on_body_exited(body: Node2D) -> void:
 func execute_press() -> void:
 	update_visuals()
 	
+	# This safely plays the sound only if the node exists
 	if audio != null:
 		audio.play()
 		
@@ -51,7 +52,6 @@ func update_visuals() -> void:
 	if animated_sprite == null:
 		return
 		
-	# Play the specific animations based on the button's state
 	if is_pressed:
 		animated_sprite.play("pressed")
 	else:
