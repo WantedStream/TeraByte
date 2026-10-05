@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://f7odr0r3u1mi" path="res://block/tile_map_layer.tscn" id="6_klepv"]
 [ext_resource type="PackedScene" uid="uid://baoty6hk7gic2" path="res://transition_door/transition_door.tscn" id="7_53gjn"]
 [ext_resource type="PackedScene" uid="uid://dbwcekk72aiy5" path="res://blocks/props/WorldButton/world_button.tscn" id="7_hyp3v"]
+[ext_resource type="PackedScene" uid="uid://7i7ee15la1pt" path="res://blocks/props/gate/gate.tscn" id="8_1ow6f"]
 [ext_resource type="PackedScene" uid="uid://dl5apfp8qhcw3" path="res://enemies/walker/patrol/walker.tscn" id="8_j48du"]
 [ext_resource type="PackedScene" uid="uid://dj28vscq7tf6i" path="res://enemies/gunner/gunner.tscn" id="9_8jbay"]
 [ext_resource type="PackedScene" uid="uid://8hm7na0p1456" path="res://blocks/props/question_block/question_block.tscn" id="9_la5aw"]
 [ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="11_qbdb0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyp3v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rikf"]
 resource_local_to_scene = true
 size = Vector2(10000, 20)
 
@@ -41,6 +42,9 @@ tile_map_data = PackedByteArray("AAD8/wMAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAACAAA
 [node name="WorldButton" parent="." unique_id=309898748 instance=ExtResource("7_hyp3v")]
 position = Vector2(-663, 127)
 
+[node name="Gate" parent="." unique_id=729163677 instance=ExtResource("8_1ow6f")]
+position = Vector2(-546, 154)
+
 [node name="Coin2" parent="." unique_id=642499919 instance=ExtResource("5_wbmc6")]
 position = Vector2(1017, 170)
 
@@ -54,7 +58,7 @@ position = Vector2(2206, 89)
 position = Vector2(-96, 161)
 
 [node name="Gunner" parent="." unique_id=1230784278 instance=ExtResource("9_8jbay")]
-position = Vector2(75, 147)
+position = Vector2(1958, 44)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=180215436]
 position = Vector2(-430, 96)
@@ -67,6 +71,8 @@ position = Vector2(-287, 176)
 
 [node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
 position = Vector2(-758, 201)
-shape = SubResource("RectangleShape2D_hyp3v")
+shape = SubResource("RectangleShape2D_7rikf")
+
+[connection signal="button_toggled" from="WorldButton" to="Gate" method="_on_world_button_button_toggled"]
 
 [editable path="DeathBarrier"]

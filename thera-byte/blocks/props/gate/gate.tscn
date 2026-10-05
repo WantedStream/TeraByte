@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://7i7ee15la1pt"]
+
+[ext_resource type="Script" uid="uid://be4frnyx6qcyj" path="res://blocks/props/gate/gate.gd" id="1_y1pno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+
+[node name="Gate" type="StaticBody2D" unique_id=729163677]
+script = ExtResource("1_y1pno")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1219206089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1187343397]
+shape = SubResource("RectangleShape2D_g4v7s")
