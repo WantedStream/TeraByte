@@ -2,7 +2,7 @@ class_name Enemy
 extends Actor
 
 @export var contact_damage: int = 1
-
+var target: Node2D = null # Add this line!
 func _ready() -> void:
 	super() # Grabs the starting health from Actor
 

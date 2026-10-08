@@ -2,8 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://3i4e7cfataky" path="res://enemies/enemy/enemy.tscn" id="1_d7uhn"]
 [ext_resource type="Script" uid="uid://dkwjh3ptw4whd" path="res://enemies/flyer/fly.gd" id="2_f5aoo"]
+[ext_resource type="Script" uid="uid://kk7tg53ofcak" path="res://enemies/flyer/flyer.gd" id="2_m17aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5aoo"]
+size = Vector2(200, 200)
 
 [node name="Flyer" unique_id=800958931 instance=ExtResource("1_d7uhn")]
+script = ExtResource("2_m17aa")
 
-[node name="Fly" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="2" unique_id=1089922150]
+[node name="StateMachine" parent="." index="3" unique_id=983240821 node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("Idle")
+
+[node name="Fly" type="Node" parent="StateMachine" index="2" unique_id=1089922150]
 script = ExtResource("2_f5aoo")
+
+[node name="DetectionZone" type="Area2D" parent="." index="5" unique_id=1353086767]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" index="0" unique_id=828763662]
+shape = SubResource("RectangleShape2D_f5aoo")
+
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

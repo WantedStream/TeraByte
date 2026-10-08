@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dj28vscq7tf6i" path="res://enemies/gunner/gunner.tscn" id="9_8jbay"]
 [ext_resource type="PackedScene" uid="uid://8hm7na0p1456" path="res://blocks/props/question_block/question_block.tscn" id="9_la5aw"]
 [ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="11_qbdb0"]
+[ext_resource type="PackedScene" uid="uid://cobplk6lccumy" path="res://enemies/flyer/flyer.tscn" id="14_7rikf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ow6f"]
 resource_local_to_scene = true
@@ -72,6 +73,9 @@ position = Vector2(-287, 176)
 [node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
 position = Vector2(-758, 201)
 shape = SubResource("RectangleShape2D_1ow6f")
+
+[node name="Flyer" parent="." unique_id=2128639883 instance=ExtResource("14_7rikf")]
+position = Vector2(149, 99)
 
 [connection signal="button_toggled" from="WorldButton" to="Gate" method="_on_world_button_button_toggled"]
 
