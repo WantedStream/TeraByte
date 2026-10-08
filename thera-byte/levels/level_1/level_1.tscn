@@ -43,7 +43,7 @@ tile_map_data = PackedByteArray("AAD8/wMAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAA
 position = Vector2(-663, 127)
 
 [node name="Gate" parent="." unique_id=729163677 instance=ExtResource("8_1ow6f")]
-position = Vector2(-546, 154)
+position = Vector2(-1022, 156)
 
 [node name="Coin2" parent="." unique_id=642499919 instance=ExtResource("5_wbmc6")]
 position = Vector2(1017, 170)

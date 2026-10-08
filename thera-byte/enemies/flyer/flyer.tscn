@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cobplk6lccumy"]
+
+[ext_resource type="PackedScene" uid="uid://3i4e7cfataky" path="res://enemies/enemy/enemy.tscn" id="1_d7uhn"]
+[ext_resource type="Script" uid="uid://dkwjh3ptw4whd" path="res://enemies/flyer/fly.gd" id="2_f5aoo"]
+
+[node name="Flyer" unique_id=800958931 instance=ExtResource("1_d7uhn")]
+
+[node name="Fly" type="Node" parent="StateMachine" parent_id_path=PackedInt32Array(983240821) index="2" unique_id=1089922150]
+script = ExtResource("2_f5aoo")
