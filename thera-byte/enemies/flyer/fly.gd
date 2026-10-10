@@ -10,7 +10,7 @@ func enter() -> void:
 			animator.play("fly")
 
 func exit() -> void:
-	pass
+	actor.velocity = Vector2.ZERO
 
 func physics_update(_delta: float) -> void:
 	# Safety check: If target is lost, stop flying

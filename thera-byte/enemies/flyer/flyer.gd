@@ -1,33 +1,23 @@
 extends Enemy
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+func _ready() -> void:
+	# Make sure the base Enemy/Actor ready functions still run
+	super()
 
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-
+# Delete the _physics_process with gravity entirely! The State Machine handles that now.
 
 func _on_detection_zone_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	print("Player entered fly zone")
+	# 1. Assign the player body to the target variable
+	target = body
+	# 2. Force the State Machine to switch to the Fly node
+	state_machine.force_transition("fly")
 
 
-func _on_detection_zone_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_detection_zone_body_exited(_body: Node2D) -> void:
+	print("Player exited fly zone")
+	# 1. Clear the target so the flyer stops chasing
+	target = null
+	# 2. Force the State Machine to go back to sitting still
+	state_machine.force_transition("idle")

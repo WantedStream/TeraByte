@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dj28vscq7tf6i" path="res://enemies/gunner/gunner.tscn" id="9_8jbay"]
 [ext_resource type="PackedScene" uid="uid://8hm7na0p1456" path="res://blocks/props/question_block/question_block.tscn" id="9_la5aw"]
 [ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="11_qbdb0"]
+[ext_resource type="PackedScene" uid="uid://cobplk6lccumy" path="res://enemies/flyer/flyer.tscn" id="14_7rikf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rikf"]
 resource_local_to_scene = true
@@ -24,7 +25,7 @@ script = ExtResource("1_fi65l")
 [node name="Parallax2D" parent="." unique_id=1035909389 instance=ExtResource("2_la5aw")]
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-25, 11)
-repeat_size = Vector2(640, 0)
+repeat_size = Vector2(1000, 0)
 repeat_times = 20
 
 [node name="HUD" parent="." unique_id=64284090 instance=ExtResource("2_1dqib")]
@@ -55,10 +56,10 @@ position = Vector2(606, 172)
 position = Vector2(3346, -256)
 
 [node name="Walker" parent="." unique_id=800958931 instance=ExtResource("8_j48du")]
-position = Vector2(-96, 161)
+position = Vector2(1130, 101)
 
 [node name="Gunner" parent="." unique_id=1230784278 instance=ExtResource("9_8jbay")]
-position = Vector2(2003, 159)
+position = Vector2(5516, 93)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=180215436]
 position = Vector2(-430, 96)
@@ -72,6 +73,9 @@ position = Vector2(-287, 176)
 [node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
 position = Vector2(-758, 201)
 shape = SubResource("RectangleShape2D_7rikf")
+
+[node name="Flyer" parent="." unique_id=187030950 instance=ExtResource("14_7rikf")]
+position = Vector2(9, -16)
 
 [connection signal="button_toggled" from="WorldButton" to="Gate" method="_on_world_button_button_toggled"]
 
