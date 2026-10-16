@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8hgn238xk7tg"]
+
+[ext_resource type="Script" uid="uid://ct6ebx13flydo" path="res://blocks/props/crate/crate.gd" id="1_t5jle"]
+[ext_resource type="Texture2D" uid="uid://clxnxerxnuo1i" path="res://blocks/props/crate/crate_texture.png" id="2_gwe00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(62, 40)
+
+[node name="Crate" type="CharacterBody2D" unique_id=1882200299]
+collision_mask = 3
+script = ExtResource("1_t5jle")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=128200826]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_gwe00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396142150]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="PushZone" type="Area2D" parent="." unique_id=1889907549]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushZone" unique_id=604907402]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[connection signal="body_entered" from="PushZone" to="." method="_on_push_zone_body_entered"]
+[connection signal="body_exited" from="PushZone" to="." method="_on_push_zone_body_exited"]

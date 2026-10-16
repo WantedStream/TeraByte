@@ -14,8 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://8hm7na0p1456" path="res://blocks/props/question_block/question_block.tscn" id="9_la5aw"]
 [ext_resource type="PackedScene" uid="uid://b8g5xwyqs08u6" path="res://hazards/death_barrier/death_barrier.tscn" id="11_qbdb0"]
 [ext_resource type="PackedScene" uid="uid://cobplk6lccumy" path="res://enemies/flyer/flyer.tscn" id="14_7rikf"]
+[ext_resource type="PackedScene" uid="uid://c8hgn238xk7tg" path="res://blocks/props/crate/crate.tscn" id="15_ov0dm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rikf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwxes"]
 resource_local_to_scene = true
 size = Vector2(10000, 20)
 
@@ -72,10 +73,13 @@ position = Vector2(-287, 176)
 
 [node name="CollisionShape2D" parent="DeathBarrier" index="0" unique_id=484821014]
 position = Vector2(-758, 201)
-shape = SubResource("RectangleShape2D_7rikf")
+shape = SubResource("RectangleShape2D_lwxes")
 
 [node name="Flyer" parent="." unique_id=187030950 instance=ExtResource("14_7rikf")]
 position = Vector2(9, -16)
+
+[node name="Crate" parent="." unique_id=1882200299 instance=ExtResource("15_ov0dm")]
+position = Vector2(357, 118)
 
 [connection signal="button_toggled" from="WorldButton" to="Gate" method="_on_world_button_button_toggled"]
 
