@@ -18,7 +18,8 @@ func _ready() -> void:
 	update_visuals()
 
 func _on_body_entered(body: Node2D) -> void:
-	if not body is BasePlayer:
+	
+	if not (body is BasePlayer or body is Crate):
 		return
 		
 	if behavior == ButtonBehavior.ONE_SHOT and is_pressed:
@@ -32,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 	execute_press()
 
 func _on_body_exited(body: Node2D) -> void:
-	if not body is BasePlayer:
+	if not (body is BasePlayer or body is Crate):
 		return
 		
 	if behavior == ButtonBehavior.MOMENTARY:

@@ -10,6 +10,7 @@ size = Vector2(60, 60)
 size = Vector2(62, 40)
 
 [node name="Crate" type="CharacterBody2D" unique_id=1882200299]
+collision_layer = 17
 collision_mask = 3
 script = ExtResource("1_t5jle")
 
@@ -21,7 +22,7 @@ texture = ExtResource("2_gwe00")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="PushZone" type="Area2D" parent="." unique_id=1889907549]
-collision_layer = 0
+collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushZone" unique_id=604907402]
