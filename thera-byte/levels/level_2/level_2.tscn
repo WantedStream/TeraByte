@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cediimwiqugjt"]
+
+[ext_resource type="PackedScene" uid="uid://cv17rrriju4eu" path="res://levels/BaseLevel/base_level.tscn" id="1_0b444"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jniqj"]
+resource_local_to_scene = true
+size = Vector2(10000, 20)
+
+[node name="level_2" unique_id=790450046 instance=ExtResource("1_0b444")]
+
+[node name="CollisionShape2D" parent="DeathBarrier" parent_id_path=PackedInt32Array(1896400656) index="0" unique_id=484821014]
+shape = SubResource("RectangleShape2D_jniqj")
+
+[editable path="DeathBarrier"]

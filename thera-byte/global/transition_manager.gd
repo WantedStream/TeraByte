@@ -24,8 +24,10 @@ const MENU_PATHS: Dictionary = {
 # 2. LEVELS (Sequential Data via Array)
 # ==========================================
 const LEVEL_PATHS: Array[String] = [
-	"res://levels/level_1/level_1.tscn" # Level 1 (Index 0)
+	"res://levels/level_1/level_1.tscn" ,# Level 1 (Index 0)
 	# Add "res://levels/level_2/level_2.tscn" here later!
+	"res://levels/level_2/level_2.tscn",
+	"res://levels/level_3/level_3.tscn"
 ]
 
 # ==========================================
