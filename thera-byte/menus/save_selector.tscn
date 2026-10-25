@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://tstm5dn6gxsy"]
 
+[ext_resource type="Script" uid="uid://demc2fwkbaun" path="res://menus/save_selector/save_selector.gd" id="1_y23me"]
+
 [node name="SaveSelector" type="Control" unique_id=1227435712]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y23me")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=116050907]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="HBoxContainer" parent="VBoxContainer" unique_id=1701354589]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/Slot1" unique_id=835751510]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/Slot1" unique_id=717489903]
+layout_mode = 2
+
+[node name="DeleteButton" type="Button" parent="VBoxContainer/Slot1" unique_id=206247021]
+layout_mode = 2
+
+[node name="Slot2" type="HBoxContainer" parent="VBoxContainer" unique_id=775382864]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/Slot2" unique_id=819470967]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/Slot2" unique_id=581967184]
+layout_mode = 2
+
+[node name="DeleteButton" type="Button" parent="VBoxContainer/Slot2" unique_id=1342453551]
+layout_mode = 2
+
+[node name="Slot3" type="HBoxContainer" parent="VBoxContainer" unique_id=1555935425]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/Slot3" unique_id=601279529]
+layout_mode = 2
+
+[node name="LoadButton" type="Button" parent="VBoxContainer/Slot3" unique_id=437605519]
+layout_mode = 2
+
+[node name="DeleteButton" type="Button" parent="VBoxContainer/Slot3" unique_id=255269982]
+layout_mode = 2

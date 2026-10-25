@@ -2,7 +2,7 @@ extends Node
 
 var current_slot: int = 1
 var game_data: Dictionary = {
-	"current_level": "res://base_level.tscn", 
+	"levels_completed": [], 
 	"coins": 0, 
 	"selected_character": "knight"
 }
