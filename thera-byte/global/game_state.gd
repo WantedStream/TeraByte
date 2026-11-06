@@ -12,7 +12,7 @@ var data: Dictionary = {
 func add_coins(amount: int = 1) -> void:
 	data["coins"] += amount
 	SaveManager.save_game() # Tell the SaveManager to write the file
-	print("Coins updated: ", data["coins"])
+	EventBus.coin_collected.emit(amount)
 
 func mark_level_completed(level_number: int) -> void:
 	var completed: Array = data.get("levels_completed", [])
