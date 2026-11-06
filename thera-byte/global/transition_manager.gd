@@ -8,7 +8,8 @@ enum Menu {
 	DEATH_SCREEN,
 	LEVEL_COMPLETE,
 	LEVEL_SELECTOR,
-	CHARACTER_SELECTOR
+	CHARACTER_SELECTOR,
+	SAVE_SELECTOR
 }
 
 const MENU_PATHS: Dictionary = {
@@ -17,6 +18,8 @@ const MENU_PATHS: Dictionary = {
 	Menu.LEVEL_COMPLETE: "res://menus/level_complete_menu/level_complete.tscn",
 	Menu.LEVEL_SELECTOR: "res://menus/level_selector/level_selector.tscn",
 	Menu.CHARACTER_SELECTOR: "res://menus/character_selector/character_selector.tscn",
+	Menu.SAVE_SELECTOR: "res://menus/save_selector/save_selector.tscn"
+
 
 }
 

@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-		TransitionManager.open_menu(TransitionManager.Menu.LEVEL_SELECTOR)
+		TransitionManager.open_menu(TransitionManager.Menu.SAVE_SELECTOR)
 	 # Replace with function body.
 
 

@@ -42,7 +42,7 @@ func refresh_ui() -> void:
 
 func _on_load_pressed(slot_number: int) -> void:
 	SaveManager.load_game(slot_number)
-	get_tree().change_scene_to_file("res://menus/level_selector/level_selector.tscn")
+	TransitionManager.open_menu(TransitionManager.Menu.LEVEL_SELECTOR)
 
 func _on_delete_pressed(slot_number: int) -> void:
 	SaveManager.delete_save(slot_number)
