@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	EventBus.finish_level.emit(level_id)
-	print("entered door")
+	GameState.mark_level_completed(level_id)
+		
+		# 2. Trigger the UI menu transition
+	TransitionManager.open_menu(TransitionManager.Menu.LEVEL_COMPLETE)
 	pass # Replace with function body.
